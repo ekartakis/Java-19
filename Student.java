@@ -30,7 +30,7 @@ public class Student {
 	public String getName() {
 		return name;
 	} //End of method
-
+	
 	//Method get for String status
 	public String getStatus() {
 		return status;
@@ -48,8 +48,7 @@ public class Student {
 	}
 	public void setID(int id) {
 		this.id=id;
-	}
-	
+	}	
 	//Method for new entry of Student covid-19 test result by the secretariat
 	public static void newStudent() {
         String name;
@@ -64,12 +63,10 @@ public class Student {
 		} while (result != "P" || result != "N");
 		if (result == "P") {
 			positive();
-		} 
-		else {
+		} else {
 			negative();
 		}
-	}
-	
+	}	
 	//Method for negative tests
 	public static void negative() {
 		total_neg++;
@@ -117,8 +114,7 @@ public class Student {
 				System.out.println("Enter emploee name: ");
 				close_contacts();
 			}
-		}
-		
+		}	
 	}
 	 
 	//Method for close contacts
@@ -166,15 +162,14 @@ public class Student {
 		System.out.println("Ageusia: ");
 		do {
 			an1 = dm.nextLine();
-	    } while (an1 != "Yes" || an1 != "No");
+	    	} while (an1 != "Yes" || an1 != "No");
 		if (an1 == "Yes") {
 			p = p + 1;
 		}
 		
 		if (p > 1) {
 			System.out.println("You need to do the covid-19 test, as well as stay in quarantine for 14 days");
-		} 
-		else {
+		} else {
 			System.out.print("Headaque: ");
 		    	do {
 		        	an1 = dm.nextLine();
