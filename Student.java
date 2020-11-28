@@ -40,19 +40,16 @@ public class Student {
 	public boolean cl_contact() {
 		return cl_contact;
 	} //End of method
-
 	public void setStatus(String status) {
 		this.status=status;
 	}
-
 	public void setName(String name) {
 		this.name=name;
 	}
-
 	public void setID(int id) {
 		this.id=id;
 	}
-
+	
 	//Method for new entry of Student covid-19 test result by the secretariat
 	public static void newStudent() {
         String name;
@@ -71,7 +68,6 @@ public class Student {
 		else {
 			negative();
 		}
-
 	}
 	
 	//Method for negative tests
@@ -89,7 +85,7 @@ public class Student {
 		total_pos++;
 		Scanner scan1 = new Scanner(System.in);
 		Scanner scan2 = new Scanner(System.in);
-		System.out.println("You need to stay in quarantine for 14 days. You may return back to the university after all the symptoms resolve");
+		System.out.println("You need to stay in quarantine for 14 days. You may return back to the university after all the symptoms resolve");		
 		
 		System.out.println("Have you come in close contact with other AUEB students within the last 14 days?");
 		 
@@ -185,32 +181,28 @@ public class Student {
 	        	} while (an1 != "Yes" || an1 != "No");
 		    	if (an1 == "Yes") {
 		    		n = n + 1;
-		    	}
-		    
+		    	}	    
 		    System.out.print("Shiver: ");
 		   	do {
 		        an1 = dm.nextLine();
 		    } while (an1 != "Yes" || an1 != "No");
 		    if (an1 == "Yes") {
 			   	n = n + 1;
-		    }
-		    
+		    }	    
 		    System.out.print("Myalgias: ");
 		    do {
 		       	an1 = dm.nextLine();
 		    } while (an1 != "Yes" || an1 != "No");
 		    if (an1 == "Yes") {
 			   	n = n + 1;
-		    }
-		    
+		    }		    
 		    System.out.print("Queasiness: ");
 		    do {
 		       	an1 = dm.nextLine();
 		    } while (an1 != "Yes" || an1 != "No");
 		    if (an1 == "Yes") {
 		       	n = n + 1;
-		    }
-		    
+		    } 
 		    System.out.print("Diarrhea: ");
 		    do {
 		       	an1 = dm.nextLine();
@@ -225,9 +217,7 @@ public class Student {
 		    if (p <=1 || n<=1) {
 		    	System.out.println("Since you have come in contact with a positive case, you should stay safe and, if you manifest any of the symptoms mentioned above, you may do the covid-19 test");
 		    }
-
-    	}
-		
+    	}	
     }
      
     //Method for status change
@@ -250,11 +240,8 @@ public class Student {
 	            break;
 	        }
 		}
-
 		if(found_sc == true) {
 	   		students[con_found_sc].setStatus(status);
 		}
-		
 	}
-
 }
