@@ -5,7 +5,6 @@ import java.sql.Connection;
 import java.sql.SQLException;
 
 public class TheConn  {
-
     public static Connection connect() {
         // SQLite connection string
         String url = "jdbc:sqlite:Thefinaldb.db";
@@ -18,5 +17,4 @@ public class TheConn  {
         }
         return conn;
     }
-
 }
