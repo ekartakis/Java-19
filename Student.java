@@ -73,7 +73,7 @@ public class Student {
 	//Method for negative tests
 	public static void negative() {
 		total_neg++;
-     }
+  	}
 	 
 	//Method for positive cases
 	public static void positive() {
