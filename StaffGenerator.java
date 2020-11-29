@@ -245,7 +245,7 @@ public class StaffGenerator {
 	surnamewomen[58] = "Θανογιάννη";
 	surnamewomen[59] = "Θεοχάρη";
 	
-	
+	//creates columns for Staff objects in the database
 	for(int i=1 ; i<= 25; i++) {
 		int randname = rand.nextInt(50);
 		int randsurname = rand.nextInt(60);
