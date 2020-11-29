@@ -1,13 +1,11 @@
 import java.util.Random;
 
-//Κλάση αυτή δημιουργεί 50 μέλη του προσωπικού του ΟΠΑ
-public class Staff {
+//The class creates 50 AUEB Staff members
+public class StaffGenerator {
 	
-	/* Η μέθοδος εκτυπώνει 50 μέλη του προσωπικού που εργάζεται στο ΟΠΑ
-	   σε μορφή δημιουργία αντικειμένων (Staff counter = new Satff(,name,surname,status,closecontact)
-	   προκυμένου με copy της εκτυπωση της μεθόδου και paste στο κύριο πρόγραμμα στη κλάση δημιουργίας των Staff να
-	   δημιουργηθούν αυτόματα οι Staff ετσι ώστε να έχουμε τα ίδια στοιχεία για κάθε εκτέλεση του προγράμματος 
-	*/
+	// The method prints 2.500 Staff members in object creation format (Staff AM = new Staff(AM, name, surname, status, closecontact), so that, 
+	// by copying the print of the method and pasting it to the class of the creation of Staff objects, the Staff members are automatically created. 
+	// In this way, we will have the same elements for every execution of the program.
 	public static void genStaff() {
 	
 	
@@ -18,6 +16,7 @@ public class Staff {
 	String surnamewomen[] = new String [60];
 	Random rand = new Random();
 	
+	//Creation of 50 male names	
 	namesmen[0] = "Νικόλαος";
 	namesmen[1] = "Γεώργιος";
 	namesmen[2] = "Δημήτριος";
@@ -70,6 +69,7 @@ public class Staff {
 	namesmen[48] = "Ζαχαρίας";
 	namesmen[49] = "Ανέστης";
 	
+	//Creation of 60 male surnames
 	surnamemen[0] = "Αλεξίου";
 	surnamemen[1] = "Δημητρακόπουλος";
 	surnamemen[2] = "Διαμαντόπουλος";
@@ -131,6 +131,7 @@ public class Staff {
 	surnamemen[58] = "Ασλανίδης";
 	surnamemen[59] = "Παπαδόπουλος";
 	
+	//Creation of 50 female names
 	nameswomen[0] = "Μαρία";
 	nameswomen[1] = "Ελένη";
 	nameswomen[2] = "Αικατερίνη";
@@ -182,6 +183,7 @@ public class Staff {
 	nameswomen[48] = "Δάφνη";
 	nameswomen[49] = "Άρτεμις";
 	
+	//Creation of 60 male surnames
 	surnamewomen[0] = "Αβαγιανέλλη";
 	surnamewomen[1] = "Βαγοπούλου";
 	surnamewomen[2] = "Αγαδάκη";
