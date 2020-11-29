@@ -1,7 +1,7 @@
 import java.util.Random;
 
 //The class creates 2.500 Students
-public class Generator {
+public class StudentGenerator {
 	
 	// The method prints 2.500 Students in object creation format (Student AM = new Student(AM, name, surname, status, closecontact), so that, 
 	// by copying the print of the method and pasting it to the class of the creation of Student objects, the Students are automatically created. 
