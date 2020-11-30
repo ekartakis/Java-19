@@ -7,21 +7,18 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 public class UpdateTheRecords {
-	
-	
-	
+		
 public static String checkIfAmExist (int AM) {
 		
         String result = "false";
         String url = "jdbc:sqlite:Thefinaldb.db";
         String quer = "SELECT AM FROM Student WHERE AM = " + AM;
         ;
-        try {Connection conn = DriverManager.getConnection(url);
-        	
+	try {
+		Connection conn = DriverManager.getConnection(url);
         	Statement firststmt  = conn.createStatement();
         	ResultSet firstrs    = firststmt.executeQuery(quer);
         	if(firstrs.next() == true) {
-             
         		result="true";
         	       try {
         				conn.close();
@@ -29,12 +26,11 @@ public static String checkIfAmExist (int AM) {
         				// TODO Auto-generated catch block
         				e.printStackTrace();
         			}
-        	} 
-        	else {result = "false";}
+        	} else {
+			result = "false";}
         } catch (SQLException e) {
             System.out.println(e.getMessage());
         }
- 
         return result;
 	}
 	public static void updateTheAmOfStudent (int currentAM, int newAM) {
@@ -62,8 +58,9 @@ public static String checkIfAmExist (int AM) {
             Statement stmt4  = conn.createStatement();
             ResultSet rs4    = stmt4.executeQuery(sql4);
             System.out.println("\n\nThe student's AM was updated\n: "+rs3.getString("name") +" "+ rs4.getString("surname") +"\nThe new AM is: " + rs2.getInt("AM"));
-        	} 
-        	else {System.out.println("\nYou inserted a wrong AM");}
+        	}
+        	else {
+			System.out.println("\nYou inserted a wrong AM");}
             try {
     			conn.close();
     		} catch (SQLException e) {
@@ -72,7 +69,7 @@ public static String checkIfAmExist (int AM) {
     		}
         } catch (SQLException e) {
             System.out.println(e.getMessage());
-        }        
+        }
 	}
 	public static void makeTheStudentPositive (int am) {
 		
@@ -80,35 +77,33 @@ public static String checkIfAmExist (int AM) {
         String url = "jdbc:sqlite:Thefinaldb.db";
         String quer = "SELECT AM FROM Student WHERE AM = " + am;
         ;
-        try {Connection conn = DriverManager.getConnection(url);
-        	
+	try {
+		Connection conn = DriverManager.getConnection(url);
         	Statement firststmt  = conn.createStatement();
         	ResultSet firstrs    = firststmt.executeQuery(quer);
         	if(firstrs.next() == true) {
-             Statement stmt  = conn.createStatement();
-             stmt.execute(sql);
-             String sql2 = "SELECT AM FROM Student WHERE AM = " + am;
-             String sql3 = "SELECT name FROM Student WHERE AM = " + am;
-             String sql4 = "SELECT surname FROM Student WHERE AM = " + am;
-             String sql5 = "SELECT Status FROM Student WHERE AM = " + am;
-             
-           
-       	    Statement stmt2  = conn.createStatement();
-            ResultSet rs2    = stmt2.executeQuery(sql2);
-            Statement stmt3  = conn.createStatement();
-            ResultSet rs3    = stmt3.executeQuery(sql3);
-            Statement stmt4  = conn.createStatement();
-            ResultSet rs4    = stmt4.executeQuery(sql4);
-            Statement stmt5  = conn.createStatement();
-            ResultSet rs5    = stmt5.executeQuery(sql5);
-            System.out.println("\n\nThe Student's status was updated\n"+rs3.getString("name") +" "+ rs4.getString("surname") + " " + rs2.getInt("AM")+ "\nThe updated status is: Positive" );
-        	} 
-        	else {System.out.println("\nYou inserted a wrong AM");}
-            try {
-    			conn.close();
-    		} catch (SQLException e) {
-    			// TODO Auto-generated catch block
-    			e.printStackTrace();
+			Statement stmt  = conn.createStatement();
+             		stmt.execute(sql);
+             		String sql2 = "SELECT AM FROM Student WHERE AM = " + am;
+             		String sql3 = "SELECT name FROM Student WHERE AM = " + am;
+             		String sql4 = "SELECT surname FROM Student WHERE AM = " + am;
+             		String sql5 = "SELECT Status FROM Student WHERE AM = " + am; 
+       	    		Statement stmt2  = conn.createStatement();
+            		ResultSet rs2    = stmt2.executeQuery(sql2);
+            		Statement stmt3  = conn.createStatement();
+            		ResultSet rs3    = stmt3.executeQuery(sql3);
+            		Statement stmt4  = conn.createStatement();
+            		ResultSet rs4    = stmt4.executeQuery(sql4);
+            		Statement stmt5  = conn.createStatement();
+            		ResultSet rs5    = stmt5.executeQuery(sql5);
+            		System.out.println("\n\nThe Student's status was updated\n"+rs3.getString("name") +" "+ rs4.getString("surname") + " " + rs2.getInt("AM")+ "\nThe updated status is: Positive" );
+        	} else {
+			System.out.println("\nYou inserted a wrong AM");}
+	try {
+    		conn.close();
+    	} catch (SQLException e) {
+    		// TODO Auto-generated catch block
+    		e.printStackTrace();
     		}
         } catch (SQLException e) {
             System.out.println(e.getMessage());
@@ -126,14 +121,12 @@ public static String checkIfAmExist (int AM) {
         	Statement firststmt  = conn.createStatement();
         	ResultSet firstrs    = firststmt.executeQuery(quer);
         	if(firstrs.next() == true) {
-             Statement stmt  = conn.createStatement();
-             stmt.execute(sql);
-             String sql2 = "SELECT AM FROM Student WHERE AM = " + am;
-             String sql3 = "SELECT name FROM Student WHERE AM = " + am;
-             String sql4 = "SELECT surname FROM Student WHERE AM = " + am;
-             String sql5 = "SELECT Status FROM Student WHERE AM = " + am;
-             
-           
+            Statement stmt  = conn.createStatement();
+            stmt.execute(sql);
+            String sql2 = "SELECT AM FROM Student WHERE AM = " + am;
+            String sql3 = "SELECT name FROM Student WHERE AM = " + am;
+            String sql4 = "SELECT surname FROM Student WHERE AM = " + am;
+            String sql5 = "SELECT Status FROM Student WHERE AM = " + am;
        	    Statement stmt2  = conn.createStatement();
             ResultSet rs2    = stmt2.executeQuery(sql2);
             Statement stmt3  = conn.createStatement();
@@ -143,8 +136,8 @@ public static String checkIfAmExist (int AM) {
             Statement stmt5  = conn.createStatement();
             ResultSet rs5    = stmt5.executeQuery(sql5);
             System.out.println("\n\nThe Student's status was updated\n"+rs3.getString("name") +" "+ rs4.getString("surname") + " " + rs2.getInt("AM")+ "\nThe updated status is: Negative" );
-        	} 
-        	else {System.out.println("\nYou inserted a wrong AM");}
+        	} else {
+			System.out.println("\nYou inserted a wrong AM");}
             try {
     			conn.close();
     		} catch (SQLException e) {
@@ -181,8 +174,8 @@ public static String checkIfAmExist (int AM) {
             ResultSet rs4    = stmt4.executeQuery(sql4);
        
             System.out.println("\n\nThe Student's status was updated\n"+rs3.getString("name") +" "+ rs4.getString("surname") + " " + rs2.getInt("AM")+ "\nThe student is a closed contact with a positive person" );
-        	} 
-        	else {System.out.println("\nYou inserted a wrong AM");}
+        	} else {
+			System.out.println("\nYou inserted a wrong AM");}
             try {
     			conn.close();
     		} catch (SQLException e) {
@@ -222,7 +215,8 @@ public static String checkIfAmExist (int AM) {
        
             System.out.println("\n\nThe Student's status was updated\n"+rs3.getString("name") +" "+ rs4.getString("surname") + " " + rs2.getInt("AM")+ "\nThe Student is not a close contact after this update " );
         	} 
-        	else {System.out.println("\nYou inserted a wrong AM");}
+        	else {
+			System.out.println("\nYou inserted a wrong AM");}
             try {
     			conn.close();
     		} catch (SQLException e) {
@@ -251,8 +245,7 @@ public static String checkIfAmExist (int AM) {
             
         	result = rs.getString("Status");
             
-        	} 
-        	else {
+        	} else {
         		System.out.println("\nYou inserted a wrong AM");
         		result = "err";
         		}
@@ -317,8 +310,7 @@ public static String checkIfAmExist (int AM) {
             
         	result = rs.getString("CloseContact");
             
-        	} 
-        	else {
+        	} else {
         		System.out.println("\nYou inserted a wrong AM");
         		result = "err";
         	}
@@ -330,45 +322,38 @@ public static String checkIfAmExist (int AM) {
     		}
         } catch (SQLException e) {
             System.out.println(e.getMessage());
-            
         } 
-        
-        
-        return result;
-       
-	}
-	
-	public static void makeTheStaffPositive (int ΑΦΜ) {
-		
+        return result;      
+	}	
+	public static void makeTheStaffPositive (int ΑΦΜ) {		
         String sql =  "UPDATE Staff SET Status = 'p' WHERE ΑΦΜ =" + ΑΦΜ;
         String url = "jdbc:sqlite:Thefinaldb.db";
         String quer = "SELECT ΑΦΜ FROM Staff WHERE ΑΦΜ = " + ΑΦΜ;
         ;
-        try {Connection conn = DriverManager.getConnection(url);
-        	
+        try {
+		Connection conn = DriverManager.getConnection(url);    	
         	Statement firststmt  = conn.createStatement();
         	ResultSet firstrs    = firststmt.executeQuery(quer);
         	if(firstrs.next() == true) {
-             Statement stmt  = conn.createStatement();
-             stmt.execute(sql);
-             String sql2 = "SELECT ΑΦΜ FROM Staff WHERE ΑΦΜ = " + ΑΦΜ;
-             String sql3 = "SELECT name FROM Staff WHERE ΑΦΜ = " + ΑΦΜ;
-             String sql4 = "SELECT surname FROM Staff WHERE ΑΦΜ = " + ΑΦΜ;
-             String sql5 = "SELECT Status FROM Staff WHERE ΑΦΜ = " + ΑΦΜ;
-             
-           
-       	    Statement stmt2  = conn.createStatement();
-            ResultSet rs2    = stmt2.executeQuery(sql2);
-            Statement stmt3  = conn.createStatement();
-            ResultSet rs3    = stmt3.executeQuery(sql3);
-            Statement stmt4  = conn.createStatement();
-            ResultSet rs4    = stmt4.executeQuery(sql4);
-            Statement stmt5  = conn.createStatement();
-            ResultSet rs5    = stmt5.executeQuery(sql5);
-            System.out.println("\n\nThe Staff's status was updated\n"+rs3.getString("name") +" "+ rs4.getString("surname") + " " + rs2.getInt("ΑΦΜ")+ "\nThe updated status is: Positive" );
-        	} 
-        	else {System.out.println("\nYou inserted a wrong ΑΦΜ");}
-            try {
+			Statement stmt  = conn.createStatement();
+			stmt.execute(sql);
+			String sql2 = "SELECT ΑΦΜ FROM Staff WHERE ΑΦΜ = " + ΑΦΜ;
+			String sql3 = "SELECT name FROM Staff WHERE ΑΦΜ = " + ΑΦΜ;
+			String sql4 = "SELECT surname FROM Staff WHERE ΑΦΜ = " + ΑΦΜ;         
+			String sql5 = "SELECT Status FROM Staff WHERE ΑΦΜ = " + ΑΦΜ;
+			Statement stmt2  = conn.createStatement();
+			ResultSet rs2    = stmt2.executeQuery(sql2);
+			Statement stmt3  = conn.createStatement();
+			ResultSet rs3    = stmt3.executeQuery(sql3);
+			Statement stmt4  = conn.createStatement();
+			ResultSet rs4    = stmt4.executeQuery(sql4);
+			Statement stmt5  = conn.createStatement();
+			ResultSet rs5    = stmt5.executeQuery(sql5);
+			System.out.println("\n\nThe Staff's status was updated\n"+rs3.getString("name") +" "+ rs4.getString("surname") + " " + rs2.getInt("ΑΦΜ")+ "\nThe updated status is: Positive" );
+        	} else {
+			System.out.println("\nYou inserted a wrong ΑΦΜ");
+		}
+		try {
     			conn.close();
     		} catch (SQLException e) {
     			// TODO Auto-generated catch block
@@ -407,8 +392,7 @@ public static String checkIfAmExist (int AM) {
             Statement stmt5  = conn.createStatement();
             ResultSet rs5    = stmt5.executeQuery(sql5);
             System.out.println("\n\nThe Staff's status was updated\n"+rs3.getString("name") +" "+ rs4.getString("surname") + " " + rs2.getInt("ΑΦΜ")+ "\nThe updated status is: Negative" );
-        	} 
-        	else {System.out.println("\nYou inserted a wrong ΑΦΜ");}
+        	} else {System.out.println("\nYou inserted a wrong ΑΦΜ");}
             try {
     			conn.close();
     		} catch (SQLException e) {
@@ -446,8 +430,7 @@ public static String checkIfAmExist (int AM) {
             ResultSet rs4    = stmt4.executeQuery(sql4);
        
             System.out.println("\n\nThe Staff's status was updated\n"+rs3.getString("name") +" "+ rs4.getString("surname") + " " + rs2.getInt("ΑΦΜ")+ "\nThe staff is a closed contact with a positive person" );
-        	} 
-        	else {System.out.println("\nYou inserted a wrong ΑΦΜ");}
+        	} else {System.out.println("\nYou inserted a wrong ΑΦΜ");}
             try {
     			conn.close();
     		} catch (SQLException e) {
@@ -486,8 +469,7 @@ public static String checkIfAmExist (int AM) {
             ResultSet rs4    = stmt4.executeQuery(sql4);
        
             System.out.println("\n\nThe Staff's status was updated\n"+rs3.getString("name") +" "+ rs4.getString("surname") + " " + rs2.getInt("ΑΦΜ")+ "\nThe staff is not a close contact after this update " );
-        	} 
-        	else {System.out.println("\nYou inserted a wrong ΑΦΜ");}
+        	} else {System.out.println("\nYou inserted a wrong ΑΦΜ");}
             try {
     			conn.close();
     		} catch (SQLException e) {
@@ -516,8 +498,7 @@ public static String checkIfAmExist (int AM) {
             
         	result = rs.getString("Status");
             
-        	} 
-        	else {
+        	} else {
         		System.out.println("\nYou inserted a wrong ΑΦΜ");
         		result = "err";
         		}
@@ -581,8 +562,7 @@ public static String checkIfAmExist (int AM) {
             
         	result = rs.getString("CloseContact");
             
-        	} 
-        	else {
+        	} else {
         		System.out.println("\nYou inserted a wrong ΑΦΜ");
         		result = "err";
         		}
@@ -614,8 +594,7 @@ public static String checkIfΑΦΜExist (int ΑΦΜ) {
         	if(firstrs.next() == true) {
              
         		result="true";
-        	} 
-        	else {result = "false";}
+        	} else {result = "false";}
             try {
     			conn.close();
     		} catch (SQLException e) {
@@ -644,8 +623,7 @@ public static String checkIfSecretariat (int ΑΦΜ) {
          if(firstrs.getInt("ΑΦΜ") == 363970 || firstrs.getInt("ΑΦΜ") == 301877 || firstrs.getInt("ΑΦΜ") == 913878) {
         	 result = "true";
          }
-    	} 
-    	else {result = "false";}
+    	} else {result = "false";}
         try {
     		conn.close();
     	} catch (SQLException e) {
@@ -675,8 +653,7 @@ public static void sendEmailToStudent (int am) {
         System.out.println("\n\nThe Student with AM: " + firstrs.getInt("AM") + " has been informed\nAn email has been sent at: " + rs.getString("Email"));
     	
         
-    	} 
-    	else {
+    	} else {
     		System.out.println("\nYou inserted a wrong AM");
     		
     		}
@@ -690,9 +667,6 @@ public static void sendEmailToStudent (int am) {
         System.out.println(e.getMessage());
     } 
     
-    
-    
-   
 }
 
 public static void sendEmailToStaff (int ΑΦΜ) {
@@ -708,13 +682,9 @@ public static void sendEmailToStaff (int ΑΦΜ) {
     	Statement stmt  = conn.createStatement();
         ResultSet rs    = stmt.executeQuery(sql);
         
-        System.out.println("\n\nThe Staff with ΑΦΜ: " + firstrs.getInt("ΑΦΜ") + " has been informed\nAn email has been sent at: " + rs.getString("Email"));
-    	
-        
-    	} 
-    	else {
-    		System.out.println("\nYou inserted a wrong ΑΦΜ");
-    		
+        System.out.println("\n\nThe Staff with ΑΦΜ: " + firstrs.getInt("ΑΦΜ") + " has been informed\nAn email has been sent at: " + rs.getString("Email"));     
+    	} else {
+    		System.out.println("\nYou inserted a wrong ΑΦΜ");   		
     		}
         try {
 			conn.close();
@@ -747,8 +717,7 @@ public static String giveMeTheNameOfStaff (int ΑΦΜ) {
         result = rs.getString("Name") + " " + rs2.getString("Surname");
     	
         
-    	} 
-    	else {
+    	} else {
     		result = "\nYou inserted a wrong ΑΦΜ";
     		
     		}
@@ -784,8 +753,7 @@ public static String giveMeTheNameOfStudent (int AM) {
     	if(firstrs.next() == true) {
          
     		result = rs.getString("Name") + " " + rs2.getString("Surname");
-    	} 
-    	else {result = "\nYou inserted a wrong AM";}
+    	} else {result = "\nYou inserted a wrong AM";}
         try {
 			conn.close();
 		} catch (SQLException e) {
