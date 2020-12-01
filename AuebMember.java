@@ -1,5 +1,3 @@
-package Methods;
-
 public abstract class AuebMember {
 	
 	public abstract void iWantMyStat(int id);
