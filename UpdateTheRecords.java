@@ -3,8 +3,23 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+
 
 public class UpdateTheRecords {
+
+	  public static String giveMeTheDate() {    
+		   DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd/MM/yyyy");  
+		   LocalDateTime now = LocalDateTime.now();  
+		   return dtf.format(now);  
+		  }    
+	  
+	  public static String dateTime() {    
+		   DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");  
+		   LocalDateTime now = LocalDateTime.now();  
+		   return dtf.format(now);  
+		  }    
 	
 	
 	
@@ -53,6 +68,12 @@ public static String checkIfAmExist (int AM) {
         String quer2 = "SELECT ΑΦΜ FROM Staff WHERE ΑΦΜ = " + id;
         String url = "jdbc:sqlite:Thefinaldb.db";
         String quer = "SELECT AM FROM Student WHERE AM = " + id;
+        String date = giveMeTheDate();
+        String nl = null;
+        String sql10 = "UPDATE Student SET DatePos ='" + date + "' WHERE AM = " + id;
+        String sql11 = "UPDATE Student SET DatePos ='" + nl + "' WHERE AM = " + id;
+        String sql12 = "UPDATE Staff SET DatePos ='" + date + "' WHERE ΑΦΜ = " + id;
+        String sql13 = "UPDATE Staff SET DatePos ='" + nl + "' WHERE ΑΦΜ = " + id;
         
         try {Connection conn = DriverManager.getConnection(url);
        
@@ -63,6 +84,8 @@ public static String checkIfAmExist (int AM) {
         					if(stat.equals("p")) {
         						Statement stmt  = conn.createStatement();
         						stmt.execute(sql);
+        						Statement stmt40  = conn.createStatement();
+        						stmt40.execute(sql10);
      
         						Statement stmt2  = conn.createStatement();
         						ResultSet rs2    = stmt2.executeQuery(sql2);
@@ -72,11 +95,13 @@ public static String checkIfAmExist (int AM) {
         						ResultSet rs4    = stmt4.executeQuery(sql4);
         						Statement stmt5  = conn.createStatement();
         						ResultSet rs5    = stmt5.executeQuery(sql5);
-        						System.out.println("\n\nThe Student's status was updated\n"+rs3.getString("name") +" "+ rs4.getString("surname") + " " + rs2.getInt("AM")+ "\nThe updated status is: Positive" );
+        						System.out.println("\n\nThe Student's status was updated\n"+ "Date of update: " + dateTime() + "\nStudent details: " + rs3.getString("name") +" "+ rs4.getString("surname") + " AM: " + rs2.getInt("AM")+ "\nThe updated status is: Positive" );
         					}
         					else if(stat.equals("n")) {
         						Statement stmt60  = conn.createStatement();
         						stmt60.execute(sqln);
+        						Statement stmt41  = conn.createStatement();
+        						stmt41.execute(sql11);
             
         						Statement stmt6  = conn.createStatement();
         						ResultSet rs6    = stmt6.executeQuery(sql2);
@@ -86,7 +111,7 @@ public static String checkIfAmExist (int AM) {
         						ResultSet rs8    = stmt8.executeQuery(sql4);
         						Statement stmt9  = conn.createStatement();
         						ResultSet rs9    = stmt9.executeQuery(sql5);
-        						System.out.println("\n\nThe Student's status was updated\n"+rs7.getString("name") +" "+ rs8.getString("surname") + " " + rs6.getInt("AM")+ "\nThe updated status is: Negative" );
+        						System.out.println("\n\nThe Student's status was updated\n"+ "Date of update: " + dateTime() + "\nStudent details: " + rs7.getString("name") +" "+ rs8.getString("surname") + " AM: " + rs6.getInt("AM")+ "\nThe updated status is: Negative" );
         					}
         				}
         				else {System.out.println("\nYou inserted a wrong AM");}
@@ -97,6 +122,8 @@ public static String checkIfAmExist (int AM) {
         				if (stat.equals("p")) {
         					Statement stmt150  = conn.createStatement();
         					stmt150.execute(sqlstf);
+        					Statement stmt42  = conn.createStatement();
+    						stmt42.execute(sql12);
         					Statement stmt10  = conn.createStatement();
         					ResultSet rs10    = stmt10.executeQuery(sql6);
         					Statement stmt11  = conn.createStatement();
@@ -105,18 +132,20 @@ public static String checkIfAmExist (int AM) {
         					ResultSet rs12    = stmt12.executeQuery(sql8);
         					Statement stmt13  = conn.createStatement();
         					ResultSet rs13    = stmt13.executeQuery(sql9);
-        					System.out.println("\n\nThe Staff's status was updated\n"+rs11.getString("name") +" "+ rs12.getString("surname") + " " + rs10.getInt("ΑΦΜ")+ "\nThe updated status is: Positive" );
+        					System.out.println("\n\nThe Staff's status was updated\n" +"Date of update: " + dateTime() + "\nStaff details: " +rs11.getString("name") + rs12.getString("surname") + " ΑΦΜ: " + rs10.getInt("ΑΦΜ")+ "\nThe updated status is: Positive" );
         				}
         				else if (stat.equals("n")) {
         					Statement stmt30  = conn.createStatement();
         					stmt30.execute(sqlstfn);
+        					Statement stmt43  = conn.createStatement();
+    						stmt43.execute(sql13);
         					Statement stmt14  = conn.createStatement();
         					ResultSet rs10    = stmt14.executeQuery(sql6);
         					Statement stmt15  = conn.createStatement();
         					ResultSet rs11   = stmt15.executeQuery(sql7);
         					Statement stmt16  = conn.createStatement();
         					ResultSet rs12    = stmt16.executeQuery(sql8);
-        					System.out.println("\n\nThe Staff's status was updated\n"+rs11.getString("name") +" "+ rs12.getString("surname") + " " + rs10.getInt("ΑΦΜ")+ "\nThe updated status is: Negative" );
+        					System.out.println("\n\nThe Staff's status was updated\n"+ "Date of update " + dateTime() + "\nStaff details: " + rs11.getString("name") +" "+ rs12.getString("surname") + " ΑΦΜ: " + rs10.getInt("ΑΦΜ")+ "\nThe updated status is: Negative" );
         				}
         			}
         			else {System.out.println("\nYou inserted a wrong ΑΦΜ");}
@@ -151,6 +180,12 @@ public static String checkIfAmExist (int AM) {
         String quer2 = "SELECT ΑΦΜ FROM Staff WHERE ΑΦΜ = " + id;
         String url = "jdbc:sqlite:Thefinaldb.db";
         String quer = "SELECT AM FROM Student WHERE AM = " + id;
+        String date = giveMeTheDate();
+        String nl = null;
+        String sql10 = "UPDATE Student SET DateClose ='" + date + "' WHERE AM = " + id;
+        String sql11 = "UPDATE Student SET DateClose ='" + nl + "' WHERE AM = " + id;
+        String sql12 = "UPDATE Staff SET DateClose ='" + date + "' WHERE ΑΦΜ = " + id;
+        String sql13 = "UPDATE Staff SET DateClose ='" + nl + "' WHERE ΑΦΜ = " + id;
         
         try {Connection conn = DriverManager.getConnection(url);
        
@@ -161,6 +196,8 @@ public static String checkIfAmExist (int AM) {
         					if(stat.equals("true")) {
         						Statement stmt  = conn.createStatement();
         						stmt.execute(sql);
+        						Statement stmt45  = conn.createStatement();
+        						stmt45.execute(sql10);
      
         						Statement stmt2  = conn.createStatement();
         						ResultSet rs2    = stmt2.executeQuery(sql2);
@@ -170,11 +207,13 @@ public static String checkIfAmExist (int AM) {
         						ResultSet rs4    = stmt4.executeQuery(sql4);
         						Statement stmt5  = conn.createStatement();
         						ResultSet rs5    = stmt5.executeQuery(sql5);
-        						System.out.println("\n\nThe Student's status was updated\n"+rs3.getString("name") +" "+ rs4.getString("surname") + " " + rs2.getInt("AM")+ "\nThe Student is a closed contact with a positive person" );
+        						System.out.println("\n\nThe Student's status was updated\n"+ "Date of update: " + dateTime() + "\nStudent details: " + rs3.getString("name") +" "+ rs4.getString("surname") + " AM: " + rs2.getInt("AM")+ "\nThe Student is a closed contact with a positive person" );
         					}
         					else if(stat.equals("false")) {
         						Statement stmt60  = conn.createStatement();
         						stmt60.execute(sqln);
+        						Statement stmt46  = conn.createStatement();
+        						stmt46.execute(sql11);
             
         						Statement stmt6  = conn.createStatement();
         						ResultSet rs6    = stmt6.executeQuery(sql2);
@@ -184,7 +223,7 @@ public static String checkIfAmExist (int AM) {
         						ResultSet rs8    = stmt8.executeQuery(sql4);
         						Statement stmt9  = conn.createStatement();
         						ResultSet rs9    = stmt9.executeQuery(sql5);
-        						System.out.println("\n\nThe Student's status was updated\n"+rs7.getString("name") +" "+ rs8.getString("surname") + " " + rs6.getInt("AM")+ "\nThe is not a close contact after this update" );
+        						System.out.println("\n\nThe Student's status was updated\n"+ "Date of update: " + dateTime() + "\nStudent details: " + rs7.getString("name") +" "+ rs8.getString("surname") + " AM: " + rs6.getInt("AM")+ "\nThe is not a close contact after this update" );
         					}
         				}
         				else {System.out.println("\nYou inserted a wrong AM");}
@@ -195,6 +234,9 @@ public static String checkIfAmExist (int AM) {
         				if (stat.equals("true")) {
         					Statement stmt150  = conn.createStatement();
         					stmt150.execute(sqlstf);
+        					Statement stmt47  = conn.createStatement();
+    						stmt47.execute(sql12);
+        
         					Statement stmt10  = conn.createStatement();
         					ResultSet rs10    = stmt10.executeQuery(sql6);
         					Statement stmt11  = conn.createStatement();
@@ -203,18 +245,21 @@ public static String checkIfAmExist (int AM) {
         					ResultSet rs12    = stmt12.executeQuery(sql8);
         					Statement stmt13  = conn.createStatement();
         					ResultSet rs13    = stmt13.executeQuery(sql9);
-        					System.out.println("\n\nThe Staff's status was updated\n"+rs11.getString("name") +" "+ rs12.getString("surname") + " " + rs10.getInt("ΑΦΜ")+ "\nThe staff is a closed contact with a positive person" );
+        					System.out.println("\n\nThe Staff's status was updated\n"+ "Date of update: " + dateTime() + "\nStaff details: " + rs11.getString("name") +" "+ rs12.getString("surname") + " AΦΜ: " + rs10.getInt("ΑΦΜ")+ "\nThe staff is a closed contact with a positive person" );
         				}
         				else if (stat.equals("false")) {
         					Statement stmt30  = conn.createStatement();
         					stmt30.execute(sqlstfn);
+        					Statement stmt48  = conn.createStatement();
+    						stmt48.execute(sql13);
+        
         					Statement stmt14  = conn.createStatement();
         					ResultSet rs10    = stmt14.executeQuery(sql6);
         					Statement stmt15  = conn.createStatement();
         					ResultSet rs11   = stmt15.executeQuery(sql7);
         					Statement stmt16  = conn.createStatement();
         					ResultSet rs12    = stmt16.executeQuery(sql8);
-        					System.out.println("\n\nThe Staff's status was updated\n"+rs11.getString("name") +" "+ rs12.getString("surname") + " " + rs10.getInt("ΑΦΜ")+ "\nThe staff in not a closed contact after this update" );
+        					System.out.println("\n\nThe Staff's status was updated\n"+ "Date of update: " + dateTime() + "\nStaff details: " + rs11.getString("name") +" "+ rs12.getString("surname") + " ΑΦΜ: " + rs10.getInt("ΑΦΜ")+ "\nThe staff in not a closed contact after this update" );
         				}
         			}
         			else {System.out.println("\nYou inserted a wrong ΑΦΜ");}
@@ -233,9 +278,10 @@ public static String checkIfAmExist (int AM) {
 	}
 		
 	
-	public static void  giveMeAllPositiveStudents () {
+	public static int  totalPositiveNumber () {
 		int counter = 0;
         String sql =  "SELECT AM FROM Student WHERE Status = 'p'";
+        String sql2 =  "SELECT ΑΦΜ FROM Staff WHERE Status = 'p'";
         String url = "jdbc:sqlite:Thefinaldb.db";
         
       
@@ -243,14 +289,14 @@ public static String checkIfAmExist (int AM) {
         	
         	Statement stmt  = conn.createStatement();
             ResultSet rs    = stmt.executeQuery(sql);
-            System.out.println("Here is the list with the AM of all the positive Students:\n\n");
+            Statement stmt2  = conn.createStatement();
+            ResultSet rs2    = stmt2.executeQuery(sql2);
           while(rs.next()) {  
-            System.out.println(rs.getString("AM"));
             counter++;
           }
-          if (counter==0) {
-        	  System.out.println("\nThere is not positive student");
-          }
+          while(rs2.next()) {  
+              counter++;
+            }
           try {
   			conn.close();
   		} catch (SQLException e) {
@@ -259,15 +305,15 @@ public static String checkIfAmExist (int AM) {
   		}
         } catch (SQLException e) {
             System.out.println(e.getMessage());
-        } 
+        }
+        return counter;
            
 	}
 	
-	
-				
-	public static void  giveMeAllPositiveStaffs () {
+	public static int  totalCloseContNumber () {
 		int counter = 0;
-        String sql =  "SELECT ΑΦΜ FROM Staff WHERE Status = 'p'";
+        String sql =  "SELECT AM FROM Student WHERE CloseContact = 'true'";
+        String sql2 =  "SELECT ΑΦΜ FROM Staff WHERE CloseContact = 'true'";
         String url = "jdbc:sqlite:Thefinaldb.db";
         
       
@@ -275,14 +321,14 @@ public static String checkIfAmExist (int AM) {
         	
         	Statement stmt  = conn.createStatement();
             ResultSet rs    = stmt.executeQuery(sql);
-            System.out.println("Here is the list with the ΑΦΜ of all the postive Staffs:\n\n");
+            Statement stmt2  = conn.createStatement();
+            ResultSet rs2    = stmt2.executeQuery(sql2);
           while(rs.next()) {  
-            System.out.println(rs.getString("ΑΦΜ"));
             counter++;
           }
-          if (counter==0) {
-        	  System.out.println("\nThere is not positive staff");
-          }
+          while(rs2.next()) {  
+              counter++;
+            }
           try {
   			conn.close();
   		} catch (SQLException e) {
@@ -291,10 +337,10 @@ public static String checkIfAmExist (int AM) {
   		}
         } catch (SQLException e) {
             System.out.println(e.getMessage());
-        } 
+        }
+        return counter;
            
 	}
-
 	
 public static String checkIfΑΦΜExist (int ΑΦΜ) {
 		
