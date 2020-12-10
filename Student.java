@@ -129,10 +129,13 @@ public class Student extends AuebMember {
         	ResultSet firstrs    = firststmt.executeQuery(quer);
         	if(firstrs.next() == true) {
         	Statement stmt  = conn.createStatement();
-            ResultSet rs    = stmt.executeQuery(sql);           
-        	result = rs.getString("Status");           
-        	} else {
-        		System.out.println("\nYou inserted a wrong AM");
+            ResultSet rs    = stmt.executeQuery(sql);
+            
+        	result = rs.getString("Status");
+            
+        	} 
+        	else {
+				System.out.println("\nYou inserted a wrong AM");
         		result = "err";
         		}
             try {
@@ -144,8 +147,10 @@ public class Student extends AuebMember {
         } catch (SQLException e) {
             System.out.println(e.getMessage());
         } 
-               
-        return result;		
+        
+        
+        return result;
+		
 	}
 
 	@Override
@@ -160,9 +165,12 @@ public class Student extends AuebMember {
         	ResultSet firstrs    = firststmt.executeQuery(quer);
         	if(firstrs.next() == true) {
         	Statement stmt  = conn.createStatement();
-            ResultSet rs    = stmt.executeQuery(sql);            
-        	result = rs.getString("CloseContact");          
-        	} else {
+            ResultSet rs    = stmt.executeQuery(sql);
+            
+        	result = rs.getString("CloseContact");
+            
+        	} 
+        	else {
         		System.out.println("\nYou inserted a wrong AM");
         		result = "err";
         	}
@@ -173,8 +181,14 @@ public class Student extends AuebMember {
     			e.printStackTrace();
     		}
         } catch (SQLException e) {
-            System.out.println(e.getMessage());        
+            System.out.println(e.getMessage());
+            
         } 
-    return result;
+        
+        
+        return result;
+       
+
+		
 	}
 }
