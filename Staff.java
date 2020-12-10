@@ -1,3 +1,5 @@
+package Methods;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
@@ -25,10 +27,10 @@ public class Staff extends AuebMember {
 	}
 
 	@Override
-	public String giveMyStatus(int ΑΦΜ) {
-        String sql =  "SELECT Status FROM Staff WHERE ΑΦΜ =" + ΑΦΜ ;
+	public String giveMyStatus(int AFM) {
+        String sql =  "SELECT Status FROM Staff WHERE AFM =" + AFM ;
         String url = "jdbc:sqlite:Thefinaldb.db";
-        String quer = "SELECT ΑΦΜ FROM Staff WHERE ΑΦΜ = " + ΑΦΜ;
+        String quer = "SELECT AFM FROM Staff WHERE AFM = " + AFM;
         String result="n";
       
         try {Connection conn = DriverManager.getConnection(url);
@@ -42,7 +44,7 @@ public class Staff extends AuebMember {
             
         	} 
         	else {
-        		System.out.println("\nYou inserted a wrong ΑΦΜ");
+        		System.out.println("\nYou inserted a wrong AFM");
         		result = "err";
         		}
             try {
@@ -61,11 +63,11 @@ public class Staff extends AuebMember {
 	}
 
 	@Override
-	public String closeCont(int ΑΦΜ) {
-        String sql =  "SELECT CloseContact FROM Staff WHERE ΑΦΜ =" + ΑΦΜ ;
+	public String closeCont(int AFM) {
+        String sql =  "SELECT CloseContact FROM Staff WHERE AFM =" + AFM ;
         String url = "jdbc:sqlite:Thefinaldb.db";
-        String quer = "SELECT ΑΦΜ FROM Staff WHERE ΑΦΜ = " + ΑΦΜ;
-        String result="You inserted a wrong ΑΦΜ";
+        String quer = "SELECT AFM FROM Staff WHERE AFM = " + AFM;
+        String result="You inserted a wrong AFM";
       
         try {Connection conn = DriverManager.getConnection(url);
         	Statement firststmt  = conn.createStatement();
