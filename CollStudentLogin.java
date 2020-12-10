@@ -43,55 +43,68 @@ public class CollStudentLogin extends JFrame {
 		setBounds(100, 100, 772, 424);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
-		setContentPane(contentPane);
-
-
-
+        setContentPane(contentPane);
+        
+		
+		
 		contentPane.setLayout(null);
-
+		
 		textField = new JTextField();
 		textField.setBounds(305, 178, 372, 52);
 		contentPane.add(textField);
 		textField.setColumns(10);
 
 
-
-
-		JLabel lblCollStudentUserName = new JLabel("ID");
+		
+		
+		JLabel lblCollStudentUserName = new JLabel("User Name");
 		lblCollStudentUserName.setHorizontalAlignment(SwingConstants.LEFT);
 		lblCollStudentUserName.setFont(new Font("Tahoma", Font.BOLD, 24));
 		lblCollStudentUserName.setBounds(85, 178, 189, 52);
 		contentPane.add(lblCollStudentUserName);
-
+		
 		JButton btnCollStudentLoginButton = new JButton("Login");
 		btnCollStudentLoginButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				AM = textField.getText();
-
-				String result = UpdateTheRecords.checkIfAmExist(Integer.parseInt(AM));
-				if (result.equals("true")) {
-					JOptionPane.showMessageDialog(contentPane, "You are successfully logged in.");
-					setVisible(false);
-					CollStudentMenu studentmenu = new CollStudentMenu();
-					studentmenu.setVisible(true);
-
-				}else if (result.equals("false")) {
-					JOptionPane.showMessageDialog(contentPane, "You have inserted a wrong ID.");
-				}
-
+				int tempAfm = 0;
+				String result = " ";
+				int pointer = 0;
+				do {
+					try {
+						AM = textField.getText();
+						tempAfm = Integer.parseInt(AM);
+					} catch(Exception exc) {
+						pointer = 1 ;
+						JOptionPane.showMessageDialog(contentPane, "You have inserted a wrong ID.");
+					}
+				} while (result != " ");
+				
+                result = UpdateTheRecords.checkIfAFMExist(tempAfm);
+                
+                if (pointer == 0) {
+				    if (result.equals("true")) {
+					    JOptionPane.showMessageDialog(contentPane, "You are successfully logged in.");
+					    setVisible(false);
+					    CollStudentMenu studentmenu = new CollStudentMenu();
+					    studentmenu.setVisible(true);
+					
+				     }else if (result.equals("false")) {
+					     JOptionPane.showMessageDialog(contentPane, "You have inserted a wrong ID.");
+				     }
+                }
+				
 			}
 		});
 		btnCollStudentLoginButton.setFont(new Font("Tahoma", Font.BOLD, 24));
 		btnCollStudentLoginButton.setBounds(489, 287, 189, 60);
 		contentPane.add(btnCollStudentLoginButton);
-
-		JLabel lblLoginCollStudent = new JLabel("Enter your academic ID:");
+		
+		JLabel lblLoginCollStudent = new JLabel("Enter your name and academic ID:");
 		lblLoginCollStudent.setFont(new Font("Tahoma", Font.BOLD, 24));
 		lblLoginCollStudent.setBounds(63, 30, 614, 60);
 		contentPane.add(lblLoginCollStudent);
-
+		
 		JButton btnNewButton = new JButton("Back");
-		btnNewButton.setFont(new Font("Tahoma", Font.BOLD, 24));
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				setVisible(false);
@@ -99,8 +112,9 @@ public class CollStudentLogin extends JFrame {
 				mainmenu.setVisible(true);
 			}
 		});
-		btnNewButton.setBounds(63, 287, 189, 60);
+		btnNewButton.setBounds(12, 339, 97, 25);
 		contentPane.add(btnNewButton);
 	}
 
 }
+

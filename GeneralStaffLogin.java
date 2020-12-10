@@ -22,7 +22,7 @@ public class GeneralStaffLogin extends JFrame {
 
 	private JPanel contentPane;
 	private JTextField textField;
-	public static String ΑΦΜ;
+	public static String AFM;
 
 	/**
 	 * Launch the application.
@@ -66,17 +66,29 @@ public class GeneralStaffLogin extends JFrame {
 		JButton btnGeneralStaffLogin = new JButton("Login");
 		btnGeneralStaffLogin.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				ΑΦΜ = textField.getText();
+				int tempAfm = 0;
+				String result = " ";
+				int pointer = 0;
+				do {
+				    try {
+                        AFM = textField.getText();
+				        tempAfm = Integer.parseInt(AFM);
+				    } catch(Exception exc) {
+					    pointer = 1 ;
+					    JOptionPane.showMessageDialog(contentPane, "You have inserted a wrong ID.");
+				    }
+				} while (result != " ");
+				result = UpdateTheRecords.checkIfAFMExist(tempAfm);
+				if (pointer == 0) {
+				    if (result.equals("true")) {
+					    JOptionPane.showMessageDialog(contentPane, "You are successfully logged in.");
+					    setVisible(false);
+					    GeneralStaffMenu staffmenu = new GeneralStaffMenu();
+					    staffmenu.setVisible(true);
 
-				String result = UpdateTheRecords.checkIfΑΦΜExist(Integer.parseInt(ΑΦΜ));
-				if (result.equals("true")) {
-					JOptionPane.showMessageDialog(contentPane, "You are successfully logged in.");
-					setVisible(false);
-					GeneralStaffMenu staffmenu = new GeneralStaffMenu();
-					staffmenu.setVisible(true);
-
-				}else if (result.equals("false")) {
-					JOptionPane.showMessageDialog(contentPane, "You have inserted a wrong ID.");
+				    }else if (result.equals("false")) {
+					    JOptionPane.showMessageDialog(contentPane, "You have inserted a wrong ID.");
+				    }
 				}
 
 			}
