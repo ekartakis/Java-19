@@ -1,3 +1,4 @@
+import java.awt.EventQueue;
 import java.awt.Font;
 import java.awt.Image;
 
@@ -7,10 +8,9 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
-
-import com.sun.jdi.event.EventQueue;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+
 
 public class GeneralStaffMenu extends JFrame {
 
@@ -44,65 +44,72 @@ public class GeneralStaffMenu extends JFrame {
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
-
+		
 		JButton btnNewButton = new JButton("Show my covid status");
 		btnNewButton.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				AuebMember member3 = new Staff();
+			public void actionPerformed(ActionEvent e) {
+				AuebMember member = new Staff();
 				
-				String result = member3.giveMyStatus(Integer.parseInt(GeneralStaffLogin.ΑΦΜ));
+				String result = member.giveMyStatus(Integer.parseInt(GeneralStaffLogin.AFM));
 				if (result.equals("p")) {
 					setVisible(false);
-					StaffPositive staffpositive = new StaffPositive();
-					staffpositive.setVisible(true);
+					StaffPositive spositive = new StaffPositive();
+					spositive.setVisible(true);
 
 				} else if (result.equals("n")) {
 					setVisible(false);
-					StaffNegative staffnegative = new StaffNegative();
-					staffnegative.setVisible(true);
+					StaffNegative snegative = new StaffNegative();
+					snegative.setVisible(true);
 				}
 			}
 		});
 		btnNewButton.setBounds(286, 91, 173, 57);
 		contentPane.add(btnNewButton);
-
+		
+		
 		JButton btnNewButton_1 = new JButton("Am I a close contact?");
 		btnNewButton_1.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				AuebMember member4 = new Staff();
-				if (member4.closeCont(Integer.parseInt(GeneralStaffLogin.ΑΦΜ)).equals("true")) {
+			public void actionPerformed(ActionEvent e) {
+                AuebMember member2 = new Staff();
+				if (member2.closeCont(Integer.parseInt(GeneralStaffLogin.AFM)).equals("true")) {
 				    setVisible(false);
-				    StaffCloseCon staffclosecontact = new StaffCloseCon();
-				    staffclosecontact.setVisible(true);
-			    } else if (member4.closeCont(Integer.parseInt(GeneralStaffLogin.ΑΦΜ)).equals("false")) {
+				   StaffCloseCon close = new StaffCloseCon();
+				    close.setVisible(true);
+			    } else if (member2.closeCont(Integer.parseInt(GeneralStaffLogin.AFM)).equals("false")) {
 			    	setVisible(false);
-			    	StaffNoCloseCon staffnoclosecontact = new StaffNoCloseCon();
-			    	staffnoclosecontact.setVisible(true);
+			    	StaffNoCloseCon noclose = new StaffNoCloseCon();
+			    	noclose.setVisible(true);
 			    }
 			}
 		});
 		btnNewButton_1.setBounds(286, 161, 173, 58);
 		contentPane.add(btnNewButton_1);
-
+		
 		JButton btnNewButton_2 = new JButton("Show statistics.");
-		btnNewButton_2.setBounds(286, 230, 173, 57);
+		btnNewButton_2.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				StaffStat stfst = new StaffStat();
+				stfst.setVisible(true);
+			}
+		});
+		btnNewButton_2.setBounds(286, 232, 173, 57);
 		contentPane.add(btnNewButton_2);
-
+		
 		JLabel lblNewLabel = new JLabel("Options:");
 		lblNewLabel.setFont(new Font("Tw Cen MT Condensed", Font.BOLD, 20));
 		lblNewLabel.setBounds(342, 36, 59, 22);
 		contentPane.add(lblNewLabel);
-
-		JButton btnBackButton;
-		btnBackButton = new JButton("Exit");
-		btnBackButton.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
+		
+		JButton btnExitButton;
+		btnExitButton = new JButton("Exit");
+		btnExitButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
 				System.exit(0);
 			}
 		});
-		btnBackButton.setFont(new Font("Tahoma", Font.BOLD, 24));
-		btnBackButton.setBounds(286, 298, 173, 57);
-		contentPane.add(btnBackButton);
+		btnExitButton.setFont(new Font("Tahoma", Font.BOLD, 24));
+		btnExitButton.setBounds(286, 302, 173, 47);
+		contentPane.add(btnExitButton);
 		
 		JButton btnNewButton_3 = new JButton("Back");
 		btnNewButton_3.addActionListener(new ActionListener() {
@@ -112,9 +119,8 @@ public class GeneralStaffMenu extends JFrame {
 				mainmenu.setVisible(true);
 			}
 		});
-		btnNewButton_3.setFont(new Font("Tahoma", Font.BOLD, 17));
-		btnNewButton_3.setBounds(21, 298, 111, 57);
+		btnNewButton_3.setFont(new Font("Tahoma", Font.BOLD, 13));
+		btnNewButton_3.setBounds(12, 339, 97, 25);
 		contentPane.add(btnNewButton_3);
 	}
 }
-
