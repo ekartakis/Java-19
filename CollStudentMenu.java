@@ -85,6 +85,12 @@ public class CollStudentMenu extends JFrame {
 		contentPane.add(btnNewButton_1);
 		
 		JButton btnNewButton_2 = new JButton("Show statistics.");
+		btnNewButton_2.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				StudentStat sst = new StudentStat();
+				sst.setVisible(true);
+			}
+		});
 		btnNewButton_2.setBounds(286, 232, 173, 57);
 		contentPane.add(btnNewButton_2);
 		
