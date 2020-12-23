@@ -6,6 +6,65 @@ import java.sql.Statement;
 import java.util.Scanner;
 
 public class Student extends AuebMember {
+		
+	@Override
+	public String giveTheDateOfPos(int AM) {
+		String result = "You inserted a wrong AM";
+		String url = "jdbc:sqlite:Thefinaldb.db";
+		String quer = "SELECT AM FROM Student WHERE AM = " + AM;
+		String sql = "SELECT DatePos FROM Student WHERE AM = " + AM;
+		;
+		try {Connection conn = DriverManager.getConnection(url);
+
+		Statement firststmt  = conn.createStatement();
+		ResultSet firstrs    = firststmt.executeQuery(quer);
+		Statement stmt  = conn.createStatement();
+		ResultSet rs    = stmt.executeQuery(sql);
+		if(firstrs.next() == true) {
+
+			result = rs.getString("DatePos");
+		} 
+		else {result = "\nYou inserted a wrong AM";}
+		try {
+			conn.close();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		} catch (SQLException e) {
+			System.out.println(e.getMessage());
+		}
+		return result;
+	}
+	
+	public String giveTheDateOfCloseCont(int AM) {
+		String result = "You inserted a wrong AM";
+		String url = "jdbc:sqlite:Thefinaldb.db";
+		String quer = "SELECT AM FROM Student WHERE AM = " + AM;
+		String sql = "SELECT DateClose FROM Student WHERE AM = " + AM;
+		;
+		try {Connection conn = DriverManager.getConnection(url);
+
+		Statement firststmt  = conn.createStatement();
+		ResultSet firstrs    = firststmt.executeQuery(quer);
+		Statement stmt  = conn.createStatement();
+		ResultSet rs    = stmt.executeQuery(sql);
+		if(firstrs.next() == true) {
+
+			result = rs.getString("DateClose");
+		} 
+		else {result = "\nYou inserted a wrong AM";}
+		try {
+			conn.close();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		} catch (SQLException e) {
+			System.out.println(e.getMessage());
+		}
+		return result;
+	}
 	
 	 @Override
 	 public void interactionWithUser() {
