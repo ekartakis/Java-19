@@ -7,4 +7,6 @@ public abstract class AuebMember {
 	public abstract int menu();
 	public abstract String giveMyStatus(int id);
 	public abstract String closeCont(int id);
+	public abstract String giveTheDateOfPos(int id);
+	public abstract String giveTheDateOfCloseCont(int id);
 }
