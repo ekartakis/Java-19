@@ -65,47 +65,7 @@ public class Student extends AuebMember {
 		}
 		return result;
 	}
-	
-	 @Override
-	 public void interactionWithUser() {
-	 Scanner sc = new Scanner(System.in);
-	 int choice = menu();
-	 	while (choice != 4) {
-	 		if (choice == 1) {
-	 			System.out.println("Write your AM: ");
-	 			int AM = sc.nextInt();
-	 			iWantMyStat(AM);
-	 			menu();
-	 		} else if (choice == 2) {
-	 			System.out.println("Write your AM: ");
-	 			int AM = sc.nextInt();
-	 			iWantMyCloseCont(AM);
-	 			menu();
-	 		} else {
-	 			iWantTheStatistics();
-	 			menu();
-	 		}
-	 	}
-	 }
  
-	@Override
-	 public int menu() {
-	 Scanner sc = new Scanner(System.in);
-	 System.out.println("\n~~~~~~~~~~ STUDENT MENU ~~~~~~~~~~\n");
-	 System.out.println("1. Show my Covid-Status\n");
-	 System.out.println("2. Am I a close contact?\n");
-	 System.out.println("3. Statistical Data\n");
-	 System.out.println("4. Exit\n");
-	 System.out.println("Choose between [1-4]: ");
-	 int choice = sc.nextInt();
-	 	while (choice>4 || choice<1) {
-		 System.out.println("\nWrong input.\n");
-		 System.out.print("You must choose between [1-4]: ");
-		 choice = sc.nextInt();
-	 	}
-	 return choice;
-	 } 
-	
 	@Override
 	public void iWantMyStat(int AM) {
 	String result = giveMyStatus(AM);
