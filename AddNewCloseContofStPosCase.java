@@ -1,6 +1,5 @@
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
-
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
@@ -26,7 +25,8 @@ public class AddNewCloseContofStPosCase extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					AddNewCloseContofStPosCase frame = new AddNewCloseContofStPosCase();
+					AddNewCloseContofStPosCase frame = 
+						new AddNewCloseContofStPosCase();
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
