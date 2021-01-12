@@ -87,7 +87,6 @@ public class AddNewCloseContofStPosCase extends JFrame {
 		});
 		btnNewButton.setBounds(21, 194, 116, 34);
 		contentPane.add(btnNewButton);
-		
 		JButton btnNewButton_1 = new JButton("Back to menu");
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
