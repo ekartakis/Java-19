@@ -10,10 +10,10 @@ import java.time.format.DateTimeFormatter;
 
 public class UpdateTheRecords {
 
-	public static String giveMeTheDate() {    
-		DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd/MM/yyyy");  
-		LocalDateTime now = LocalDateTime.now();  
-		return dtf.format(now);  
+	public static String giveMeTheDate() {
+		DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+		LocalDateTime now = LocalDateTime.now();
+		return dtf.format(now);
 	}    
 
 	public static String dateTime() {  
