@@ -1,3 +1,4 @@
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
@@ -65,25 +66,25 @@ public class Student extends AuebMember {
 		}
 		return result;
 	}
- 
+	
 	@Override
 	public void iWantMyStat(int AM) {
 	String result = giveMyStatus(AM);
 		if (result.equals("p")) {
-			System.out.println("You tested positive for Covid-19!Â¥n Follow the instructions below:");
-			System.out.println("1. Self-isolate for 14 days from the day you were last in contact with the person who tested positive for coronavirus â€“ as it can take up to 14 days for symptoms to appear.Â¥n" +
-					"2. Do not leave your home for any reason â€“ if you need food or medicine, order it online or by phone, or ask friends and family to drop it off at your home.Â¥n" +
-					"3. Do not have visitors in your home, including friends and family â€“ except for essential care.Â¥n" +
-					"4. Try to avoid contact with anyone you live with as much as possible.Â¥n" +
-					"5. People you live with do not need to self-isolate if you do not have symptoms.Â¥n" +
-					"6. People in your support bubble do not need to self-isolate if you do not have symptoms.Â¥n" +
-					"WARNING: If you live with someone at higher risk from coronavirus, try to arrange for them to stay with friends or family for 14 days.Â¥n");
+			System.out.println("You tested positive for Covid-19!¥n Follow the instructions below:");
+			System.out.println("1. Self-isolate for 14 days from the day you were last in contact with the person who tested positive for coronavirus – as it can take up to 14 days for symptoms to appear.¥n" +
+					"2. Do not leave your home for any reason – if you need food or medicine, order it online or by phone, or ask friends and family to drop it off at your home.¥n" +
+					"3. Do not have visitors in your home, including friends and family – except for essential care.¥n" +
+					"4. Try to avoid contact with anyone you live with as much as possible.¥n" +
+					"5. People you live with do not need to self-isolate if you do not have symptoms.¥n" +
+					"6. People in your support bubble do not need to self-isolate if you do not have symptoms.¥n" +
+					"WARNING: If you live with someone at higher risk from coronavirus, try to arrange for them to stay with friends or family for 14 days.¥n");
 		}else if (result.equals("n")) {
-			System.out.println("You tested negative for Covid-19! Stay safe!Â¥n");
-			System.out.println("You do not need to self-isolate if your test is negative, as long as:Â¥n" +
-					"1. Everyone you live with who has symptoms tests negative.Â¥n" +
-					"2. Everyone in your support bubble who has symptoms tests negative.Â¥n" +
-					"3. You feel well â€“ if you feel unwell, stay at home until youâ€™re feeling better.Â¥n");
+			System.out.println("You tested negative for Covid-19! Stay safe!¥n");
+			System.out.println("You do not need to self-isolate if your test is negative, as long as:¥n" +
+					"1. Everyone you live with who has symptoms tests negative.¥n" +
+					"2. Everyone in your support bubble who has symptoms tests negative.¥n" +
+					"3. You feel well – if you feel unwell, stay at home until you’re feeling better.¥n");
 		}
 	}
 	
