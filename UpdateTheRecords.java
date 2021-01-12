@@ -1,4 +1,3 @@
-package Methods;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -17,7 +16,7 @@ public class UpdateTheRecords {
 		return dtf.format(now);  
 	}    
 
-	public static String dateTime() {    
+	public static String dateTime() {  
 		DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");  
 		LocalDateTime now = LocalDateTime.now();  
 		return dtf.format(now);  
@@ -47,7 +46,7 @@ public class UpdateTheRecords {
 		} 
 		else {result = "false";}
 		} catch (SQLException e) {
-			System.out.println(e.getMessage());
+			//System.out.println(e.getMessage());
 		}
 
 		return result;
@@ -95,7 +94,7 @@ public class UpdateTheRecords {
 					ResultSet rs3    = stmt3.executeQuery(sql3);
 					Statement stmt4  = conn.createStatement();
 					ResultSet rs4    = stmt4.executeQuery(sql4);
-					System.out.println("\n\nThe Student's status was updated\n"+ "Date of update: " + dateTime() + "\nStudent details: " + rs3.getString("name") +" "+ rs4.getString("surname") + " AM: " + rs2.getInt("AM")+ "\nThe updated status is: Positive" );
+				//	System.out.println("\n\nThe Student's status was updated\n"+ "Date of update: " + dateTime() + "\nStudent details: " + rs3.getString("name") +" "+ rs4.getString("surname") + " AM: " + rs2.getInt("AM")+ "\nThe updated status is: Positive" );
 				}
 				else if(stat.equals("n")) {
 					Statement stmt60  = conn.createStatement();
@@ -109,10 +108,10 @@ public class UpdateTheRecords {
 					ResultSet rs7    = stmt7.executeQuery(sql3);
 					Statement stmt8  = conn.createStatement();
 					ResultSet rs8    = stmt8.executeQuery(sql4);
-					System.out.println("\n\nThe Student's status was updated\n"+ "Date of update: " + dateTime() + "\nStudent details: " + rs7.getString("name") +" "+ rs8.getString("surname") + " AM: " + rs6.getInt("AM")+ "\nThe updated status is: Negative" );
+					//System.out.println("\n\nThe Student's status was updated\n"+ "Date of update: " + dateTime() + "\nStudent details: " + rs7.getString("name") +" "+ rs8.getString("surname") + " AM: " + rs6.getInt("AM")+ "\nThe updated status is: Negative" );
 				}
 			}
-			else {System.out.println("\nYou inserted a wrong AM");}
+			//else {System.out.println("\nYou inserted a wrong AM");}
 		} else if (who.equals("staff")) {
 			Statement firststmt2  = conn.createStatement();
 			ResultSet firstrs2    = firststmt2.executeQuery(quer2);
@@ -128,7 +127,7 @@ public class UpdateTheRecords {
 					ResultSet rs11    = stmt11.executeQuery(sql7);
 					Statement stmt12  = conn.createStatement();
 					ResultSet rs12    = stmt12.executeQuery(sql8);
-					System.out.println("\n\nThe Staff's status was updated\n" +"Date of update: " + dateTime() + "\nStaff details: " +rs11.getString("name") + " " + rs12.getString("surname") + " AFM: " + rs10.getInt("AFM")+ "\nThe updated status is: Positive" );
+				//	System.out.println("\n\nThe Staff's status was updated\n" +"Date of update: " + dateTime() + "\nStaff details: " +rs11.getString("name") + " " + rs12.getString("surname") + " AFM: " + rs10.getInt("AFM")+ "\nThe updated status is: Positive" );
 				}
 				else if (stat.equals("n")) {
 					Statement stmt30  = conn.createStatement();
@@ -141,10 +140,10 @@ public class UpdateTheRecords {
 					ResultSet rs11   = stmt15.executeQuery(sql7);
 					Statement stmt16  = conn.createStatement();
 					ResultSet rs12    = stmt16.executeQuery(sql8);
-					System.out.println("\n\nThe Staff's status was updated\n"+ "Date of update " + dateTime() + "\nStaff details: " + rs11.getString("name") +" "+ rs12.getString("surname") + " AFM: " + rs10.getInt("AFM")+ "\nThe updated status is: Negative" );
+					//System.out.println("\n\nThe Staff's status was updated\n"+ "Date of update " + dateTime() + "\nStaff details: " + rs11.getString("name") +" "+ rs12.getString("surname") + " AFM: " + rs10.getInt("AFM")+ "\nThe updated status is: Negative" );
 				}
 			}
-			else {System.out.println("\nYou inserted a wrong AFM");}
+		//	else {System.out.println("\nYou inserted a wrong AFM");}
 
 		}
 		try {
@@ -155,7 +154,7 @@ public class UpdateTheRecords {
 		}
 
 		} catch (SQLException e) {
-			System.out.println(e.getMessage());
+		//	System.out.println(e.getMessage());
 		}        
 	}
 
@@ -199,7 +198,7 @@ public class UpdateTheRecords {
 					ResultSet rs3    = stmt3.executeQuery(sql3);
 					Statement stmt4  = conn.createStatement();
 					ResultSet rs4    = stmt4.executeQuery(sql4);
-					System.out.println("\n\nThe Student's status was updated\n"+ "Date of update: " + dateTime() + "\nStudent details: " + rs3.getString("name") +" "+ rs4.getString("surname") + " AM: " + rs2.getInt("AM")+ "\nThe Student is a closed contact with a positive person" );
+				//	System.out.println("\n\nThe Student's status was updated\n"+ "Date of update: " + dateTime() + "\nStudent details: " + rs3.getString("name") +" "+ rs4.getString("surname") + " AM: " + rs2.getInt("AM")+ "\nThe Student is a closed contact with a positive person" );
 				}
 				else if(stat.equals("false")) {
 					Statement stmt60  = conn.createStatement();
@@ -213,10 +212,10 @@ public class UpdateTheRecords {
 					ResultSet rs7    = stmt7.executeQuery(sql3);
 					Statement stmt8  = conn.createStatement();
 					ResultSet rs8    = stmt8.executeQuery(sql4);
-					System.out.println("\n\nThe Student's status was updated\n"+ "Date of update: " + dateTime() + "\nStudent details: " + rs7.getString("name") +" "+ rs8.getString("surname") + " AM: " + rs6.getInt("AM")+ "\nThe is not a close contact after this update" );
+				//	System.out.println("\n\nThe Student's status was updated\n"+ "Date of update: " + dateTime() + "\nStudent details: " + rs7.getString("name") +" "+ rs8.getString("surname") + " AM: " + rs6.getInt("AM")+ "\nThe is not a close contact after this update" );
 				}
 			}
-			else {System.out.println("\nYou inserted a wrong AM");}
+		//	else {System.out.println("\nYou inserted a wrong AM");}
 		} else if (who.equals("staff")) {
 			Statement firststmt2  = conn.createStatement();
 			ResultSet firstrs2    = firststmt2.executeQuery(quer2);
@@ -233,7 +232,7 @@ public class UpdateTheRecords {
 					ResultSet rs11    = stmt11.executeQuery(sql7);
 					Statement stmt12  = conn.createStatement();
 					ResultSet rs12    = stmt12.executeQuery(sql8);
-					System.out.println("\n\nThe Staff's status was updated\n"+ "Date of update: " + dateTime() + "\nStaff details: " + rs11.getString("name") +" "+ rs12.getString("surname") + " AFM: " + rs10.getInt("AFM")+ "\nThe staff is a closed contact with a positive person" );
+				//	System.out.println("\n\nThe Staff's status was updated\n"+ "Date of update: " + dateTime() + "\nStaff details: " + rs11.getString("name") +" "+ rs12.getString("surname") + " AFM: " + rs10.getInt("AFM")+ "\nThe staff is a closed contact with a positive person" );
 				}
 				else if (stat.equals("false")) {
 					Statement stmt30  = conn.createStatement();
@@ -247,10 +246,10 @@ public class UpdateTheRecords {
 					ResultSet rs11   = stmt15.executeQuery(sql7);
 					Statement stmt16  = conn.createStatement();
 					ResultSet rs12    = stmt16.executeQuery(sql8);
-					System.out.println("\n\nThe Staff's status was updated\n"+ "Date of update: " + dateTime() + "\nStaff details: " + rs11.getString("name") +" "+ rs12.getString("surname") + " AFM: " + rs10.getInt("AFM")+ "\nThe staff in not a closed contact after this update" );
+				//	System.out.println("\n\nThe Staff's status was updated\n"+ "Date of update: " + dateTime() + "\nStaff details: " + rs11.getString("name") +" "+ rs12.getString("surname") + " AFM: " + rs10.getInt("AFM")+ "\nThe staff in not a closed contact after this update" );
 				}
 			}
-			else {System.out.println("\nYou inserted a wrong AFM");}
+	//		else {System.out.println("\nYou inserted a wrong AFM");}
 
 		}
 		try {
@@ -261,7 +260,7 @@ public class UpdateTheRecords {
 		}
 
 		} catch (SQLException e) {
-			System.out.println(e.getMessage());
+		//	System.out.println(e.getMessage());
 		}        
 	}
 
@@ -292,7 +291,7 @@ public class UpdateTheRecords {
 			e.printStackTrace();
 		}
 		} catch (SQLException e) {
-			System.out.println(e.getMessage());
+		//	System.out.println(e.getMessage());
 		}
 		return counter;
 
@@ -317,7 +316,7 @@ public class UpdateTheRecords {
 			e.printStackTrace();
 		}
 		} catch (SQLException e) {
-			System.out.println(e.getMessage());
+		//	System.out.println(e.getMessage());
 		}
 		return counter;
 
@@ -343,7 +342,7 @@ public class UpdateTheRecords {
 			e.printStackTrace();
 		}
 		} catch (SQLException e) {
-			System.out.println(e.getMessage());
+		//	System.out.println(e.getMessage());
 		}
 		return counter;
 
@@ -375,7 +374,7 @@ public class UpdateTheRecords {
 			e.printStackTrace();
 		}
 		} catch (SQLException e) {
-			System.out.println(e.getMessage());
+		//	System.out.println(e.getMessage());
 		}
 		return counter;
 
@@ -401,7 +400,7 @@ public class UpdateTheRecords {
 			e.printStackTrace();
 		}
 		} catch (SQLException e) {
-			System.out.println(e.getMessage());
+			//System.out.println(e.getMessage());
 		}
 		return counter;
 
@@ -426,7 +425,7 @@ public class UpdateTheRecords {
 			e.printStackTrace();
 		}
 		} catch (SQLException e) {
-			System.out.println(e.getMessage());
+			//System.out.println(e.getMessage());
 		}
 		return counter;
 
@@ -457,31 +456,32 @@ public class UpdateTheRecords {
 		}
 
 		} catch (SQLException e) {
-			System.out.println(e.getMessage());
+		//	System.out.println(e.getMessage());
 		}
 
 		return result;
 	}
 
-	public static void sendEmailToStudent (int am) {
+	public static String sendEmailToStudent (int am) {
 
 		String sql =  "SELECT Email FROM Student WHERE AM =" + am ;
 		String url = "jdbc:sqlite:Thefinaldb.db";
 		String quer = "SELECT AM FROM Student WHERE AM = " + am;
-
+		String result = "";
+		
 		try {Connection conn = DriverManager.getConnection(url);
 		Statement firststmt  = conn.createStatement();
 		ResultSet firstrs    = firststmt.executeQuery(quer);
 		if(firstrs.next() == true) {
 			Statement stmt  = conn.createStatement();
 			ResultSet rs    = stmt.executeQuery(sql);
-
-			System.out.println("\n\nThe Student with AM: " + firstrs.getInt("AM") + " has been informed\nAn email has been sent at: " + rs.getString("Email"));
+			result = rs.getString("Email");
+		//	System.out.println("\n\nThe Student with AM: " + firstrs.getInt("AM") + " has been informed\nAn email has been sent at: " + rs.getString("Email"));
 
 
 		} 
 		else {
-			System.out.println("\nYou inserted a wrong AM");
+		//	System.out.println("\nYou inserted a wrong AM");
 
 		}
 		try {
@@ -491,29 +491,32 @@ public class UpdateTheRecords {
 			e.printStackTrace();
 		}
 		} catch (SQLException e) {
-			System.out.println(e.getMessage());
+	//		System.out.println(e.getMessage());
 		}   
+		return result;
 	}
 
-	public static void sendEmailToStaff (int AFM) {
+	public static String sendEmailToStaff (int AFM) {
 
 		String sql =  "SELECT Email FROM Staff WHERE AFM =" + AFM ;
 		String url = "jdbc:sqlite:Thefinaldb.db";
 		String quer = "SELECT AFM FROM Staff WHERE AFM = " + AFM;
-
+		String result = "";
+		
 		try {Connection conn = DriverManager.getConnection(url);
 		Statement firststmt  = conn.createStatement();
 		ResultSet firstrs    = firststmt.executeQuery(quer);
 		if(firstrs.next() == true) {
 			Statement stmt  = conn.createStatement();
 			ResultSet rs    = stmt.executeQuery(sql);
-
-			System.out.println("\n\nThe Staff with AFM: " + firstrs.getInt("AFM") + " has been informed\nAn email has been sent at: " + rs.getString("Email"));
+			result = rs.getString("Email");
+			
+	//		System.out.println("\n\nThe Staff with AFM: " + firstrs.getInt("AFM") + " has been informed\nAn email has been sent at: " + rs.getString("Email"));
 
 
 		} 
 		else {
-			System.out.println("\nYou inserted a wrong AFM");
+	//		System.out.println("\nYou inserted a wrong AFM");
 
 		}
 		try {
@@ -523,8 +526,9 @@ public class UpdateTheRecords {
 			e.printStackTrace();
 		}
 		} catch (SQLException e) {
-			System.out.println(e.getMessage());
+	//		System.out.println(e.getMessage());
 		} 
+		return result;
 	}
 
 	public static String giveMeTheNameOfStaff (int AFM) {
@@ -559,7 +563,7 @@ public class UpdateTheRecords {
 			e.printStackTrace();
 		}
 		} catch (SQLException e) {
-			System.out.println(e.getMessage());
+		//	System.out.println(e.getMessage());
 		} 
 
 		return result;
@@ -593,7 +597,7 @@ public class UpdateTheRecords {
 			e.printStackTrace();
 		}
 		} catch (SQLException e) {
-			System.out.println(e.getMessage());
+	//		System.out.println(e.getMessage());
 		}
 		return result;
 	}
