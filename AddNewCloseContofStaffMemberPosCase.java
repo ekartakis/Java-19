@@ -8,10 +8,14 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.Font;
+import java.awt.Image;
+import java.awt.Color;
+import java.awt.SystemColor;
 
 public class AddNewCloseContofStaffMemberPosCase extends JFrame {
 
@@ -40,24 +44,28 @@ public class AddNewCloseContofStaffMemberPosCase extends JFrame {
 	 */
 	public AddNewCloseContofStaffMemberPosCase() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 450, 300);
+		setBounds(0,0,1280,730);
 		contentPane = new JPanel();
+		contentPane.setBackground(Color.WHITE);
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
 		textField = new JTextField();
-		textField.setBounds(21, 98, 386, 39);
+		textField.setFont(new Font("Bookman Old Style", Font.PLAIN, 25));
+		textField.setBackground(SystemColor.menu);
+		textField.setBounds(295, 247, 657, 84);
 		contentPane.add(textField);
 		textField.setColumns(10);
 		
-		JLabel lblNewLabel = new JLabel("Insert the TIN number of the close contact");
-		lblNewLabel.setFont(new Font("Tahoma", Font.PLAIN, 18));
-		lblNewLabel.setBounds(21, 33, 386, 46);
-		contentPane.add(lblNewLabel);
+		JLabel lblInsertTinofclosecontact = new JLabel("Please insert the TIN of the close contact:");
+		lblInsertTinofclosecontact.setFont(new Font("Bookman Old Style", Font.PLAIN, 27));
+		lblInsertTinofclosecontact.setBounds(37, 28, 722, 86);
+		contentPane.add(lblInsertTinofclosecontact);
 		
-		JButton btnNewButton = new JButton("Submit");
-		btnNewButton.addActionListener(new ActionListener() {
+		JButton btnSubmitButton = new JButton("Submit");
+		btnSubmitButton.setFont(new Font("Bookman Old Style", Font.BOLD, 35));
+		btnSubmitButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				int tempAfm = 0;
 				String result = " ";
@@ -74,10 +82,14 @@ public class AddNewCloseContofStaffMemberPosCase extends JFrame {
 				result = UpdateTheRecords.checkIfAFMExist(tempAfm);
 				if (pointer == 0) {
 				    if (result.equals("true")) {
-				    	UpdateTheRecords.changeCloseCont(tempAfm, "true", "staff member");
-				    	setVisible(false);
-				    	AnotherStaffMemberCloseCont kdb = new AnotherStaffMemberCloseCont();
-				    	kdb.setVisible(true);
+				    	String mail = UpdateTheRecords.sendEmailToStaff(tempAfm);
+				    	UpdateTheRecords.changeCloseCont(tempAfm, "true", "staff");
+				    	setVisible(true);
+				    	JOptionPane.showMessageDialog(contentPane, "The staff member has been added successfully as a close contact."
+				    			+ "An email has been sent at: " + mail);
+					    setVisible(false);
+					    AnotherStaffMemberCloseCont o = new AnotherStaffMemberCloseCont();
+					    o.setVisible(true);
 				    }else if (result.equals("false")) {
 					    JOptionPane.showMessageDialog(contentPane, "You have inserted a wrong TIN number.");
 				    }
@@ -85,18 +97,47 @@ public class AddNewCloseContofStaffMemberPosCase extends JFrame {
 
 			}
 		});
-		btnNewButton.setBounds(21, 194, 116, 34);
-		contentPane.add(btnNewButton);
+		btnSubmitButton.setBounds(999, 529, 215, 71);
+		contentPane.add(btnSubmitButton);
 		
-		JButton btnNewButton_1 = new JButton("Back to menu");
-		btnNewButton_1.addActionListener(new ActionListener() {
+		JButton btnBackButton;
+		btnBackButton = new JButton("Back");
+		btnBackButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				setVisible(false);
-				UniversityAdministrationMenu uniadmenu = new UniversityAdministrationMenu();
-				uniadmenu.setVisible(true);
+				NewPosStCaseMenu uniadminmenu = new NewPosStCaseMenu();
+				uniadminmenu.setVisible(true);
 			}
 		});
-		btnNewButton_1.setBounds(291, 194, 116, 34);
-		contentPane.add(btnNewButton_1);
+		btnBackButton.setFont(new Font("Bookman Old Style", Font.BOLD, 35));
+		btnBackButton.setBounds(47, 529, 215, 71);
+		contentPane.add(btnBackButton);
+		
+		JLabel lblTIN = new JLabel("TIN");
+		lblTIN.setFont(new Font("Tahoma", Font.BOLD, 35));
+		lblTIN.setBounds(160, 247, 102, 84);
+		contentPane.add(lblTIN);
+		
+		JLabel lblImage10 = new JLabel("");
+		Image img10 = new ImageIcon(this.getClass().getResource("/Pics/135464593_1077636602678989_8400056473973577538_n.png")).getImage();
+		lblImage10.setIcon(new ImageIcon(img10));
+		lblImage10.setBounds(981, 0, 285, 233);
+		contentPane.add(lblImage10);
+		
+		Image img4 = new ImageIcon(this.getClass().getResource("/Pics/left-arrow (1).png")).getImage();
+		btnBackButton.setIcon(new ImageIcon(img4));
+		btnBackButton.setFont(new Font("Tahoma", Font.BOLD, 24));
+		contentPane.add(btnBackButton);
+		
+		Image img3 = new ImageIcon(this.getClass().getResource("/Pics/ok.png")).getImage();
+		btnSubmitButton.setIcon(new ImageIcon(img3));
+		btnSubmitButton.setFont(new Font("Tahoma", Font.BOLD, 24));
+		contentPane.add(btnSubmitButton);
+		
+		JLabel lblImage12 = new JLabel("");
+		Image img12 = new ImageIcon(this.getClass().getResource("/Pics/lock.png")).getImage();
+		lblImage12.setIcon(new ImageIcon(img12));
+		lblImage12.setBounds(564, 387, 138, 141);
+		contentPane.add(lblImage12);
 	}
 }
