@@ -6,24 +6,21 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
-
-import java.awt.Font;
-import java.awt.Image;
-
+import javax.swing.JTextField;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
-import javax.swing.JTextField;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.awt.Font;
+import java.awt.Image;
 import java.awt.Color;
 import java.awt.SystemColor;
 
-public class RemoveStudentCloseContact extends JFrame {
+public class RemoveStaffCloseContacts extends JFrame {
 
 	private JPanel contentPane;
 	private JTextField textField;
-	public static String AM6;
-
+	public static String AFM6;
 	/**
 	 * Launch the application.
 	 */
@@ -31,7 +28,7 @@ public class RemoveStudentCloseContact extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					RemoveStudentCloseContact frame = new RemoveStudentCloseContact();
+					RemoveStaffCloseContacts frame = new RemoveStaffCloseContacts();
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -43,7 +40,7 @@ public class RemoveStudentCloseContact extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public RemoveStudentCloseContact() {
+	public RemoveStaffCloseContacts() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(0,0,1280,730);
 		contentPane = new JPanel();
@@ -52,32 +49,45 @@ public class RemoveStudentCloseContact extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		JLabel lblNewLabel = new JLabel("Please insert the academic ID of the student: ");
+		JLabel lblNewLabel = new JLabel("Please insert the member of the staff TIN:");
 		lblNewLabel.setFont(new Font("Bookman Old Style", Font.PLAIN, 27));
 		lblNewLabel.setBounds(37, 28, 722, 86);
 		contentPane.add(lblNewLabel);
 		
+		textField = new JTextField();
+		textField.setFont(new Font("Bookman Old Style", Font.PLAIN, 25));
+		textField.setBackground(SystemColor.menu);
+		textField.setBounds(295, 247, 657, 84);
+		contentPane.add(textField);
+		textField.setColumns(10);
+		
+		JLabel lblNewLabel_1 = new JLabel("TIN");
+		lblNewLabel_1.setFont(new Font("Bookman Old Style", Font.BOLD, 35));
+		lblNewLabel_1.setBounds(179, 247, 83, 84);
+		contentPane.add(lblNewLabel_1);
+		
 		JButton btnSubmitButton = new JButton("Submit");
+		btnSubmitButton.setFont(new Font("Bookman Old Style", Font.BOLD, 35));
 		btnSubmitButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				int tempAm = 0;
+				int tempAfm = 0;
 				String result = " ";
 				int pointer = 0;
 				do {
 				    try {
-                        AM6 = textField.getText();
-				        tempAm = Integer.parseInt(AM6);
+                        AFM6 = textField.getText();
+				        tempAfm = Integer.parseInt(AFM6);
 				    } catch(Exception exc) {
 					    pointer = 1 ;
-					    JOptionPane.showMessageDialog(contentPane, "You have inserted a wrong ID.");
+					    JOptionPane.showMessageDialog(contentPane, "You have inserted a wrong TIN number.");
 					    
 				    }
 				} while (result != " ");
-				result = UpdateTheRecords.checkIfAmExist(tempAm);
+				result = UpdateTheRecords.checkIfAFMExist(tempAfm);
 				if (pointer == 0) {
 				    if (result.equals("true")) {
-				    	UpdateTheRecords.changeCloseCont(tempAm, "false", "student");
-				    	JOptionPane.showMessageDialog(contentPane, "The student is not a close contact anymore.");
+				    	UpdateTheRecords.changeCloseCont(tempAfm, "false", "staff");
+				    	JOptionPane.showMessageDialog(contentPane, "The staff member is not a close contact anymore.");
 					    setVisible(false);
 					    UniversityAdministrationMenu uniadmenu = new UniversityAdministrationMenu();
 						uniadmenu.setVisible(true);
@@ -87,23 +97,11 @@ public class RemoveStudentCloseContact extends JFrame {
 				}
 			}
 		});
-		btnSubmitButton.setFont(new Font("Bookman Old Style", Font.BOLD, 35));
 		btnSubmitButton.setBounds(999, 529, 215, 71);
 		contentPane.add(btnSubmitButton);
 		
-		textField = new JTextField();
-		textField.setFont(new Font("Bookman Old Style", Font.PLAIN, 25));
-		textField.setBackground(SystemColor.menu);
-		textField.setBounds(295, 247, 657, 84);
-		contentPane.add(textField);
-		textField.setColumns(10);
-		
-		JLabel lblNewLabel_1 = new JLabel("ID");
-		lblNewLabel_1.setFont(new Font("Bookman Old Style", Font.BOLD, 35));
-		lblNewLabel_1.setBounds(179, 247, 83, 84);
-		contentPane.add(lblNewLabel_1);
-		
 		JButton btnBackButton = new JButton("Back");
+		btnBackButton.setFont(new Font("Bookman Old Style", Font.BOLD, 35));
 		btnBackButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				setVisible(false);
@@ -111,7 +109,6 @@ public class RemoveStudentCloseContact extends JFrame {
 				uniadmenu.setVisible(true);
 			}
 		});
-		btnBackButton.setFont(new Font("Bookman Old Style", Font.BOLD, 35));
 		btnBackButton.setBounds(47, 529, 215, 71);
 		contentPane.add(btnBackButton);
 		

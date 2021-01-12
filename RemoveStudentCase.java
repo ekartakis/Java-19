@@ -8,11 +8,16 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 
 import java.awt.Font;
+import java.awt.Image;
+
 import javax.swing.JTextArea;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JTextField;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.awt.Color;
+import java.awt.SystemColor;
 
 public class RemoveStudentCase extends JFrame {
 
@@ -40,29 +45,32 @@ public class RemoveStudentCase extends JFrame {
 	 */
 	public RemoveStudentCase() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 732, 427);
+		setBounds(0,0,1280,730);
 		contentPane = new JPanel();
+		contentPane.setBackground(Color.WHITE);
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		JLabel lblNewLabel = new JLabel("Insert the academic ID of the student: ");
-		lblNewLabel.setFont(new Font("Tahoma", Font.BOLD, 18));
-		lblNewLabel.setBounds(31, 36, 623, 66);
+		JLabel lblNewLabel = new JLabel("Please insert the academic ID of the student: ");
+		lblNewLabel.setFont(new Font("Bookman Old Style", Font.PLAIN, 27));
+		lblNewLabel.setBounds(37, 28, 722, 86);
 		contentPane.add(lblNewLabel);
 		
 		JLabel lblNewLabel_1 = new JLabel("ID");
-		lblNewLabel_1.setFont(new Font("Tahoma", Font.BOLD, 20));
-		lblNewLabel_1.setBounds(63, 134, 75, 66);
+		lblNewLabel_1.setFont(new Font("Bookman Old Style", Font.BOLD, 35));
+		lblNewLabel_1.setBounds(179, 247, 83, 84);
 		contentPane.add(lblNewLabel_1);
 		
 		textField = new JTextField();
-		textField.setBounds(190, 134, 464, 66);
+		textField.setFont(new Font("Bookman Old Style", Font.PLAIN, 25));
+		textField.setBackground(SystemColor.menu);
+		textField.setBounds(295, 247, 657, 84);
 		contentPane.add(textField);
 		textField.setColumns(10);
 		
-		JButton btnNewButton = new JButton("Submit");
-		btnNewButton.addActionListener(new ActionListener() {
+		JButton btnSubmitButton = new JButton("Submit");
+		btnSubmitButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				int tempAm = 0;
 				String result = " ";
@@ -75,6 +83,7 @@ public class RemoveStudentCase extends JFrame {
 					    pointer = 1 ;
 					    JOptionPane.showMessageDialog(contentPane, "You have inserted a wrong ID.");
 					    
+					    
 				    }
 				} while (result != " ");
 				result = UpdateTheRecords.checkIfAmExist(tempAm);
@@ -83,6 +92,8 @@ public class RemoveStudentCase extends JFrame {
 				    	UpdateTheRecords.changeTheStatus(tempAm, "n", "student");
 				    	JOptionPane.showMessageDialog(contentPane, "The student has bacame a negative case.");
 					    setVisible(false);
+					    UniversityAdministrationMenu uniadmenu = new UniversityAdministrationMenu();
+						uniadmenu.setVisible(true);
 				    }else if (result.equals("false")) {
 					    JOptionPane.showMessageDialog(contentPane, "You have inserted a wrong ID.");
 				    }
@@ -90,21 +101,42 @@ public class RemoveStudentCase extends JFrame {
 
 			}
 		});
-		btnNewButton.setFont(new Font("Tahoma", Font.BOLD, 20));
-		btnNewButton.setBounds(49, 260, 134, 60);
-		contentPane.add(btnNewButton);
+		btnSubmitButton.setFont(new Font("Bookman Old Style", Font.BOLD, 35));
+		btnSubmitButton.setBounds(999, 529, 215, 71);
+		contentPane.add(btnSubmitButton);
 		
-		JButton btnNewButton_1 = new JButton("Back");
-		btnNewButton_1.addActionListener(new ActionListener() {
+		JButton btnBackButton = new JButton("Back");
+		btnBackButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				setVisible(false);
 				UniversityAdministrationMenu uniadmenu = new UniversityAdministrationMenu();
 				uniadmenu.setVisible(true);
 			}
 		});
-		btnNewButton_1.setFont(new Font("Tahoma", Font.BOLD, 20));
-		btnNewButton_1.setBounds(470, 260, 134, 60);
-		contentPane.add(btnNewButton_1);
+		btnBackButton.setFont(new Font("Bookman Old Style", Font.BOLD, 35));
+		btnBackButton.setBounds(47, 529, 215, 71);
+		contentPane.add(btnBackButton);
 		
+		JLabel lblImage10 = new JLabel("");
+		Image img10 = new ImageIcon(this.getClass().getResource("/Pics/135464593_1077636602678989_8400056473973577538_n.png")).getImage();
+		lblImage10.setIcon(new ImageIcon(img10));
+		lblImage10.setBounds(981, 0, 285, 233);
+		contentPane.add(lblImage10);
+		
+		Image img4 = new ImageIcon(this.getClass().getResource("/Pics/left-arrow (1).png")).getImage();
+		btnBackButton.setIcon(new ImageIcon(img4));
+		btnBackButton.setFont(new Font("Tahoma", Font.BOLD, 24));
+		contentPane.add(btnBackButton);
+		
+		JLabel lblImage14 = new JLabel("");
+		Image img14 = new ImageIcon(this.getClass().getResource("/Pics/lock.png")).getImage();
+		lblImage14.setIcon(new ImageIcon(img14));
+		lblImage14.setBounds(564, 387, 138, 141);
+		contentPane.add(lblImage14);
+		
+		Image img3 = new ImageIcon(this.getClass().getResource("/Pics/ok.png")).getImage();
+		btnSubmitButton.setIcon(new ImageIcon(img3));
+		btnSubmitButton.setFont(new Font("Tahoma", Font.BOLD, 24));
+		contentPane.add(btnSubmitButton);
 	}
 }

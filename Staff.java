@@ -35,7 +35,7 @@ public class Staff extends AuebMember {
 		}
 		return result;
 	}
-	
+	@Override
 	public String giveTheDateOfCloseCont(int AFM) {
 		String result = "You inserted a wrong AFM";
 		String url = "jdbc:sqlite:Thefinaldb.db";

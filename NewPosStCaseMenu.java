@@ -1,13 +1,17 @@
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
+import java.awt.Font;
+import java.awt.Image;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import javax.swing.JLabel;
+import java.awt.Color;
 
 public class NewPosStCaseMenu extends JFrame {
 
@@ -34,14 +38,16 @@ public class NewPosStCaseMenu extends JFrame {
 	 */
 	public NewPosStCaseMenu() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 450, 300);
+		setBounds(0,0,1280,730);
 		contentPane = new JPanel();
+		contentPane.setBackground(Color.WHITE);
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
 		JButton btnNewButton = new JButton("Add a staff member as a close\n"
 				+ " contact of the positive case");
+		btnNewButton.setFont(new Font("Bookman Old Style", Font.PLAIN, 23));
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				setVisible(false);
@@ -49,10 +55,11 @@ public class NewPosStCaseMenu extends JFrame {
 				g.setVisible(true);
 			}
 		});
-		btnNewButton.setBounds(35, 124, 316, 49);
+		btnNewButton.setBounds(35, 187, 693, 46);
 		contentPane.add(btnNewButton);
 		
-		JButton btnNewButton_1 = new JButton("Add a student as a close contact of the positive case:");
+		JButton btnNewButton_1 = new JButton("Add a student as a close contact of the positive case");
+		btnNewButton_1.setFont(new Font("Bookman Old Style", Font.PLAIN, 23));
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				setVisible(false);
@@ -60,22 +67,54 @@ public class NewPosStCaseMenu extends JFrame {
 				h.setVisible(true);
 			}
 		});
-		btnNewButton_1.setBounds(35, 64, 316, 49);
+		btnNewButton_1.setBounds(35, 117, 693, 46);
 		contentPane.add(btnNewButton_1);
 		
 		JLabel lblNewLabel = new JLabel("Choose:");
-		lblNewLabel.setBounds(21, 11, 365, 49);
+		lblNewLabel.setFont(new Font("Bookman Old Style", Font.PLAIN, 27));
+		lblNewLabel.setBounds(37, 28, 722, 86);
 		contentPane.add(lblNewLabel);
 		
-		JButton btnNewButton_2 = new JButton("Back");
-		btnNewButton_2.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
+		JButton btnBackButton;
+		btnBackButton = new JButton("Back");
+		btnBackButton.setFont(new Font("Bookman Old Style", Font.BOLD, 35));
+		btnBackButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
 				setVisible(false);
 				UniversityAdministrationMenu uniadmenu = new UniversityAdministrationMenu();
 				uniadmenu.setVisible(true);
 			}
 		});
-		btnNewButton_2.setBounds(35, 202, 89, 34);
-		contentPane.add(btnNewButton_2);
+		btnBackButton.setBounds(47, 529, 215, 71);
+		contentPane.add(btnBackButton);
+		
+		JLabel lblImage10 = new JLabel("");
+		Image img10 = new ImageIcon(this.getClass().getResource("/Pics/135464593_1077636602678989_8400056473973577538_n.png")).getImage();
+		lblImage10.setIcon(new ImageIcon(img10));
+		lblImage10.setBounds(981, 0, 285, 233);
+		contentPane.add(lblImage10);
+		
+		Image img4 = new ImageIcon(this.getClass().getResource("/Pics/left-arrow (1).png")).getImage();
+		btnBackButton.setIcon(new ImageIcon(img4));
+		btnBackButton.setFont(new Font("Tahoma", Font.BOLD, 24));
+		contentPane.add(btnBackButton);
+		
+		JLabel lblImage14 = new JLabel("");
+		Image img14 = new ImageIcon(this.getClass().getResource("/Pics/covid-19.png")).getImage();
+		lblImage14.setIcon(new ImageIcon(img14));
+		lblImage14.setBounds(932, 297, 96, 96);
+		contentPane.add(lblImage14);
+		
+		JLabel lblImage2 = new JLabel("");
+		Image img2 = new ImageIcon(this.getClass().getResource("/Pics/covid-19.png")).getImage();
+		lblImage2.setIcon(new ImageIcon(img2));
+		lblImage2.setBounds(810, 392, 96, 96);
+		contentPane.add(lblImage2);
+		
+		JLabel lblImage5 = new JLabel("");
+		Image img5 = new ImageIcon(this.getClass().getResource("/Pics/covid-19.png")).getImage();
+		lblImage5.setIcon(new ImageIcon(img5));
+		lblImage5.setBounds(1015, 440, 96, 96);
+		contentPane.add(lblImage5);
 	}
 }
