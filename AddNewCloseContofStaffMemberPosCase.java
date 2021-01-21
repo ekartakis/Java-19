@@ -90,7 +90,7 @@ public class AddNewCloseContofStaffMemberPosCase extends JFrame {
             setVisible(true);
             JOptionPane.showMessageDialog(contentPane, 
                 "The staff member has been "
-                + "added successfully as a close contact."
+                + "added successfully as a close contact. "
                 + "An email has been sent at: " + mail);
             setVisible(false);
             AnotherStaffMemberCloseCont o = new AnotherStaffMemberCloseCont();

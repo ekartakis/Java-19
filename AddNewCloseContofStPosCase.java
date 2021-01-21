@@ -89,7 +89,7 @@ public class AddNewCloseContofStPosCase extends JFrame {
             UpdateTheRecords.changeCloseCont(tempAm, "true", "student");
             setVisible(true);
             JOptionPane.showMessageDialog(contentPane, "The student has "
-                + "been added successfully as a close contact."
+                + "been added successfully as a close contact. "
                 + "An email has been sent at: " + mail);
             setVisible(false);
             AnotherStCloseCont o = new AnotherStCloseCont();
