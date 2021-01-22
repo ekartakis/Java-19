@@ -49,7 +49,7 @@ public class StaffCloseCon extends JFrame {
     contentPane.setLayout(null);
 		
     JLabel lblNewLabel = new JLabel("You are a close contact!");
-    lblNewLabel.setFont(new Font("Bookman Old Style", Font.PLAIN, 27));
+    lblNewLabel.setFont(new Font("Bookman Old Style", Font.BOLD, 27));
     lblNewLabel.setBounds(12, 13, 663, 43);
     contentPane.add(lblNewLabel);
 		

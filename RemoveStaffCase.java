@@ -95,7 +95,7 @@ public class RemoveStaffCase extends JFrame {
           if (result.equals("true")) {
 		UpdateTheRecords.changeTheStatus(tempAfm, "n", "staff");
 		JOptionPane.showMessageDialog(contentPane, 
-				"The staff member has bacame a negative case.");
+				"The staff member has bacome a negative case.");
 	    setVisible(false);
 		UniversityAdministrationMenu uniadmenu = 
 				new UniversityAdministrationMenu();
@@ -111,7 +111,7 @@ public class RemoveStaffCase extends JFrame {
 	}
 	});
     btnSubmitButton.setBounds(999, 529, 215, 71);
-    contentPane.add(btnSubmitButton)	
+    contentPane.add(btnSubmitButton);	
     JButton btnBackButton = new JButton("Back");
     btnBackButton.setFont(new Font("Bookman Old Style", Font.BOLD, 35));
     btnBackButton.addActionListener(new ActionListener() {

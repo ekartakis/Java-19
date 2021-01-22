@@ -48,7 +48,7 @@ public class StaffLightSymptoms extends JFrame {
     setContentPane(contentPane);
     contentPane.setLayout(null);
 		
-    Label lblNewLabel = new JLabel("Did you have any of these light symptoms?");
+    JLabel lblNewLabel = new JLabel("Have you had any of these light symptoms?");
     lblNewLabel.setFont(new Font("Bookman Old Style", Font.PLAIN, 27));
     lblNewLabel.setBounds(12, 13, 696, 35);
     contentPane.add(lblNewLabel);

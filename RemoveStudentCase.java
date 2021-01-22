@@ -78,7 +78,7 @@ public class RemoveStudentCase extends JFrame {
 	public void actionPerformed(ActionEvent arg0) {
 	int tempAm = 0;
 	String result = " ";
-	nt pointer = 0;
+	int pointer = 0;
 	    do {
 	    try {
             AM5 = textField.getText();
@@ -94,7 +94,7 @@ public class RemoveStudentCase extends JFrame {
 	    if (result.equals("true")) {
 		UpdateTheRecords.changeTheStatus(tempAm, "n", "student");
 		JOptionPane.showMessageDialog(contentPane, 
-				"The student has bacame a negative case.");
+				"The student has bacome a negative case.");
 		setVisible(false);
 		UniversityAdministrationMenu uniadmenu =
 				new UniversityAdministrationMenu();

@@ -54,7 +54,7 @@ public class RemoveStudentCloseContact extends JFrame {
     contentPane.setBackground(Color.WHITE);
     contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
     setContentPane(contentPane);
-    scontentPane.setLayout(null);
+    contentPane.setLayout(null);
 		
     JLabel lblNewLabel = new JLabel(""
     		+ "Please insert the academic ID of the student: ");
