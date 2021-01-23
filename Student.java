@@ -10,12 +10,12 @@ public class Student extends AuebMember {
     
   @Override
   /**Return the date that the student tested as positive */
-  public String giveTheDateOfPos(int AM) {
+  public String giveTheDateOfPos(int am) {
     String result = "You inserted a wrong AM";
     String url = "jdbc:sqlite:Thefinaldb.db"; //Database location
     /**SQL query */
-    String quer = "SELECT AM FROM Student WHERE AM = " + AM;
-    String sql = "SELECT DatePos FROM Student WHERE AM = " + AM;
+    String quer = "SELECT AM FROM Student WHERE AM = " + am;
+    String sql = "SELECT DatePos FROM Student WHERE AM = " + am;
     try {
       //Database connection
       Connection conn = DriverManager.getConnection(url);
@@ -40,12 +40,12 @@ public class Student extends AuebMember {
   }
   
   /**Return the date that the student became close contact */
-  public String giveTheDateOfCloseCont(int AM) {
+  public String giveTheDateOfCloseCont(int am) {
     String result = "You inserted a wrong AM";
     String url = "jdbc:sqlite:Thefinaldb.db"; //Database location
     /**SQL query */
-    String quer = "SELECT AM FROM Student WHERE AM = " + AM;
-    String sql = "SELECT DateClose FROM Student WHERE AM = " + AM;
+    String quer = "SELECT AM FROM Student WHERE AM = " + am;
+    String sql = "SELECT DateClose FROM Student WHERE AM = " + am;
     try {
       //Database connection
       Connection conn = DriverManager.getConnection(url);
