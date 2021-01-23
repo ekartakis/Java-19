@@ -25,10 +25,10 @@ public class UpdateTheRecords {
   }    
   
   /**return false if the inserted id does not exist and true if it does */
-  public static String checkIfAmExist(int AM) {
+  public static String checkIfAmExist(int am) {
     String result = "false";
     String url = "jdbc:sqlite:Thefinaldb.db"; //the location of database
-    String quer = "SELECT AM FROM Student WHERE AM = " + AM;
+    String quer = "SELECT AM FROM Student WHERE AM = " + am;
     try {
       Connection conn = DriverManager.getConnection(url);
       Statement firststmt = conn.createStatement();
@@ -404,11 +404,11 @@ public class UpdateTheRecords {
   }
   
   /**Return false if the id does not exist or true if it does (as string)*/
-  public static String checkIfAFMExist (int AFM) {
+  public static String checkIfAFMExist(int afm) {
     String result = "false";
     String url = "jdbc:sqlite:Thefinaldb.db"; //the location of database
     /**SQL query*/
-    String quer = "SELECT AFM FROM Staff WHERE AFM = " + AFM;
+    String quer = "SELECT AFM FROM Staff WHERE AFM = " + afm;
     try {
       //Database Connectivity
       Connection conn = DriverManager.getConnection(url);
@@ -457,10 +457,10 @@ public class UpdateTheRecords {
     return result;
   }
 
-  public static String sendEmailToStaff (int AFM) {
-    String sql = "SELECT Email FROM Staff WHERE AFM =" + AFM;
+  public static String sendEmailToStaff(int afm) {
+    String sql = "SELECT Email FROM Staff WHERE AFM =" + afm;
     String url = "jdbc:sqlite:Thefinaldb.db";
-    String quer = "SELECT AFM FROM Staff WHERE AFM = " + AFM;
+    String quer = "SELECT AFM FROM Staff WHERE AFM = " + afm;
     String result = "";
     try {
       Connection conn = DriverManager.getConnection(url);
@@ -485,12 +485,12 @@ public class UpdateTheRecords {
   }
 
   /**Return the name of staff */
-  public static String giveMeTheNameOfStaff(int AFM) {
+  public static String giveMeTheNameOfStaff(int afm) {
     String result = "You inserted a wrong AFM";
-    String sql = "SELECT Name FROM Staff WHERE AFM =" + AFM;
+    String sql = "SELECT Name FROM Staff WHERE AFM =" + afm;
     String url = "jdbc:sqlite:Thefinaldb.db";
-    String quer = "SELECT AFM FROM Staff WHERE AFM = " + AFM;
-    String sql2 = "SELECT Surname FROM Staff WHERE AFM =" + AFM;
+    String quer = "SELECT AFM FROM Staff WHERE AFM = " + afm;
+    String sql2 = "SELECT Surname FROM Staff WHERE AFM =" + afm;
     try {
       Connection conn = DriverManager.getConnection(url);
       Statement firststmt = conn.createStatement();
@@ -516,12 +516,12 @@ public class UpdateTheRecords {
   }
 
   /**Return the name of student */
-  public static String giveMeTheNameOfStudent(int AM) {
+  public static String giveMeTheNameOfStudent(int am) {
     String result = "You inserted a wrong AM";
     String url = "jdbc:sqlite:Thefinaldb.db";
-    String quer = "SELECT AM FROM Student WHERE AM = " + AM;
-    String sql = "SELECT Name FROM Student WHERE AM = " + AM;
-    String sql2 = "SELECT Surname FROM Student WHERE AM = " + AM;
+    String quer = "SELECT AM FROM Student WHERE AM = " + am;
+    String sql = "SELECT Name FROM Student WHERE AM = " + am;
+    String sql2 = "SELECT Surname FROM Student WHERE AM = " + am;
     try {
       Connection conn = DriverManager.getConnection(url);
       Statement firststmt = conn.createStatement();
