@@ -8,12 +8,12 @@ public class Staff extends AuebMember {
 
   @Override
   /**Return the date that the staff tested as positive */
-  public String giveTheDateOfPos(int AFM) {
+  public String giveTheDateOfPos(int afm) {
     String result = "You inserted a wrong AFM";
     String url = "jdbc:sqlite:Thefinaldb.db"; //Database location
     /**SQL query */
-    String quer = "SELECT AFM FROM Staff WHERE AFM = " + AFM;
-    String sql = "SELECT DatePos FROM Staff WHERE AFM = " + AFM;
+    String quer = "SELECT AFM FROM Staff WHERE AFM = " + afm;
+    String sql = "SELECT DatePos FROM Staff WHERE AFM = " + afm;
     try {
       //Database connection
       Connection conn = DriverManager.getConnection(url);
@@ -39,12 +39,12 @@ public class Staff extends AuebMember {
   
   @Override
   /**Return the date that the staff became close contact */
-  public String giveTheDateOfCloseCont(int AFM) {
+  public String giveTheDateOfCloseCont(int afm) {
     String result = "You inserted a wrong AFM";
     String url = "jdbc:sqlite:Thefinaldb.db"; //Database location
     /**SQL query */
-    String quer = "SELECT AFM FROM Staff WHERE AFM = " + AFM;
-    String sql = "SELECT DateClose FROM Staff WHERE AFM = " + AFM;
+    String quer = "SELECT AFM FROM Staff WHERE AFM = " + afm;
+    String sql = "SELECT DateClose FROM Staff WHERE AFM = " + afm;
     try {
       //Database connection
       Connection conn = DriverManager.getConnection(url);
@@ -71,11 +71,11 @@ public class Staff extends AuebMember {
   @Override
   /**Return the status of student "p" for positive
    * and "n" to negative (as string) */
-  public String giveMyStatus(int AFM) {
+  public String giveMyStatus(int afm) {
     /**SQL queries */
-    String sql = "SELECT Status FROM Staff WHERE AFM =" + AFM;
+    String sql = "SELECT Status FROM Staff WHERE AFM =" + afm;
     String url = "jdbc:sqlite:Thefinaldb.db"; //Database location
-    String quer = "SELECT AFM FROM Staff WHERE AFM = " + AFM;
+    String quer = "SELECT AFM FROM Staff WHERE AFM = " + afm;
     String result = "n";
     try {
       //Database connection
@@ -104,11 +104,11 @@ public class Staff extends AuebMember {
   @Override
   /**Return "true" id staff is close contact 
    * or "false" if staff is not a close contact (as string)*/
-  public String closeCont(int AFM) {
+  public String closeCont(int afm) {
     /**SQL queries */
-    String sql = "SELECT CloseContact FROM Staff WHERE AFM =" + AFM;
+    String sql = "SELECT CloseContact FROM Staff WHERE AFM =" + afm;
     String url = "jdbc:sqlite:Thefinaldb.db"; //Database location
-    String quer = "SELECT AFM FROM Staff WHERE AFM = " + AFM;
+    String quer = "SELECT AFM FROM Staff WHERE AFM = " + afm;
     String result = "You inserted a wrong AFM";
     try {
       //Database connection
