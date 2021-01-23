@@ -54,7 +54,7 @@ public class StudentPositive extends JFrame {
     lblNewLabel.setFont(new Font("Bookman Old Style", Font.BOLD, 27));
     lblNewLabel.setBounds(12, 13, 953, 52);
     contentPane.add(lblNewLabel);
-
+    
     JLabel lblNewLabel_1 = new JLabel(
         "- Self-isolate for 14 days from \r\n\t\t\t\t\t" + datepos);
     lblNewLabel_1.setFont(new Font("Bookman Old Style", Font.PLAIN, 27));
@@ -106,11 +106,11 @@ public class StudentPositive extends JFrame {
     lblNewLabel_8.setBounds(12, 479, 920, 32);
     contentPane.add(lblNewLabel_8);
 
-    JLabel lblNewLabel_9 = new JLabel(
+    JLabel lblNewLabel9 = new JLabel(
         "   or ask friends and family to drop it off at your home.\"");
-    lblNewLabel_9.setFont(new Font("Bookman Old Style", Font.PLAIN, 27));
-    lblNewLabel_9.setBounds(12, 221, 775, 32);
-    contentPane.add(lblNewLabel_9);
+    lblNewLabel9.setFont(new Font("Bookman Old Style", Font.PLAIN, 27));
+    lblNewLabel9.setBounds(12, 221, 775, 32);
+    contentPane.add(lblNewLabel9);
 
     JButton btnBackButton = new JButton("Back");
     btnBackButton.addActionListener(new ActionListener() {
