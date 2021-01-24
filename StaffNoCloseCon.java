@@ -36,6 +36,7 @@ public class StaffNoCloseCon extends JFrame {
   /**
   * Create the frame.
   */
+  //In this case the staff member is not a close contact.
   public StaffNoCloseCon() {
     setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     setBounds(0, 0, 1280, 730);
@@ -44,23 +45,24 @@ public class StaffNoCloseCon extends JFrame {
     contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
     setContentPane(contentPane);
     contentPane.setLayout(null);
-
+    //Creating and displaying all the labels to write the text.
     JLabel lblNewLabel = new JLabel("You are not a close contact!");
     lblNewLabel.setFont(new Font("Bookman Old Style", Font.BOLD, 27));
     lblNewLabel.setBounds(12, 30, 437, 50);
     contentPane.add(lblNewLabel);
-		
-    JLabel lblNewLabel_1 = new JLabel("Stay safe!");
-    lblNewLabel_1.setFont(new Font("Bookman Old Style", Font.PLAIN, 27));
-    lblNewLabel_1.setBounds(12, 91, 227, 50);
-    contentPane.add(lblNewLabel_1);
-		
-    JLabel lblNewLabel_2 = new JLabel("Please follow the instructions of the "
-    		+ "National Public Health Agency!");
-    lblNewLabel_2.setFont(new Font("Bookman Old Style", Font.PLAIN, 27));
-    lblNewLabel_2.setBounds(12, 152, 916, 50);
-    contentPane.add(lblNewLabel_2);
-		
+
+    JLabel lblNewLabel1 = new JLabel("Stay safe!");
+    lblNewLabel1.setFont(new Font("Bookman Old Style", Font.PLAIN, 27));
+    lblNewLabel1.setBounds(12, 91, 227, 50);
+    contentPane.add(lblNewLabel1);
+
+    JLabel lblNewLabel2 = new JLabel("Please follow the instructions of the "
+            + "National Public Health Agency!");
+    lblNewLabel2.setFont(new Font("Bookman Old Style", Font.PLAIN, 27));
+    lblNewLabel2.setBounds(12, 152, 916, 50);
+    contentPane.add(lblNewLabel2);
+    //Creating and displaying the back button.
+    // The back button returns to the GeneralStaffMenu.
     JButton btnBackButton = new JButton("Back");
     btnBackButton.addActionListener(new ActionListener() {
       public void actionPerformed(ActionEvent e) {
@@ -72,34 +74,34 @@ public class StaffNoCloseCon extends JFrame {
     btnBackButton.setFont(new Font("Bookman Old Style", Font.BOLD, 35));
     btnBackButton.setBounds(47, 529, 215, 71);
     contentPane.add(btnBackButton);
-		
+    //Creating and displaying all the images in labels and buttons.
     JLabel lblImage10 = new JLabel("");
     Image img10 = new ImageIcon(this.getClass().getResource(
-    		"/Pics/135464593_1077636602678989_8400056473973577538_n.png")).
-    		getImage();
+            "/Pics/135464593_1077636602678989_8400056473973577538_n.png")).
+            getImage();
     lblImage10.setIcon(new ImageIcon(img10));
     lblImage10.setBounds(981, 0, 285, 233);
     contentPane.add(lblImage10);
-		
+
     JLabel lblImage13 = new JLabel("");
     Image img13 = new ImageIcon(this.getClass().getResource(
-    		"/Pics/patient.png")).getImage();
+            "/Pics/patient.png")).getImage();
     lblImage13.setIcon(new ImageIcon(img13));
     lblImage13.setBounds(998, 305, 62, 77);
     contentPane.add(lblImage13);
-		
+
     JLabel lblImage14 = new JLabel("");
     Image img14 = new ImageIcon(this.getClass().getResource(
-    		"/Pics/social.png")).getImage();
+            "/Pics/social.png")).getImage();
     lblImage14.setIcon(new ImageIcon(img14));
     lblImage14.setBounds(966, 419, 163, 139);
     contentPane.add(lblImage14);
-		
+
     Image img4 = new ImageIcon(this.getClass().getResource(
-    		"/Pics/left-arrow (1).png")).getImage();
+            "/Pics/left-arrow (1).png")).getImage();
     btnBackButton.setIcon(new ImageIcon(img4));
     btnBackButton.setFont(new Font("Tahoma", Font.BOLD, 24));
     contentPane.add(btnBackButton);
-		
+
   }
 }
