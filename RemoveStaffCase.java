@@ -45,6 +45,7 @@ public class RemoveStaffCase extends JFrame {
   /**
 	 * Create the frame.
 	 */
+  //The university administration removes a staff member positive case.
   public RemoveStaffCase() {
     setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     setBounds(0, 0, 1280, 730);
@@ -60,7 +61,7 @@ public class RemoveStaffCase extends JFrame {
 				Font.PLAIN, 27));
     lblNewLabel.setBounds(37, 28, 722, 86);
     contentPane.add(lblNewLabel);
-		
+    //This is where you insert the TIN of the staff member.
     textField = new JTextField();
     textField.setFont(new Font("Bookman Old Style", Font.PLAIN, 25));
     textField.setBackground(SystemColor.menu);
@@ -72,10 +73,15 @@ public class RemoveStaffCase extends JFrame {
     lblNewLabel_1.setFont(new Font("Bookman Old Style", Font.BOLD, 35));
     lblNewLabel_1.setBounds(179, 247, 83, 84);
     contentPane.add(lblNewLabel_1);
-		
+    //Creating and displaying the submit button.
     JButton btnSubmitButton = new JButton("Submit");
     btnSubmitButton.setFont(new Font("Bookman Old Style", Font.BOLD, 35));
     btnSubmitButton.addActionListener(new ActionListener() {
+      /*Checking if the TIN is correct.
+        If it is correct updates the database.
+    	A message is also displayed in the screen to warn the user.
+        If the TIN is incorrect, a message is displayed at the screen
+        to warn the user.*/
       public void actionPerformed(ActionEvent arg0) {
 	    int tempAfm = 0;
         String result = " ";
@@ -95,7 +101,7 @@ public class RemoveStaffCase extends JFrame {
           if (result.equals("true")) {
 		UpdateTheRecords.changeTheStatus(tempAfm, "n", "staff");
 		JOptionPane.showMessageDialog(contentPane, 
-				"The staff member has bacame a negative case.");
+				"The staff member has bacome a negative case.");
 	    setVisible(false);
 		UniversityAdministrationMenu uniadmenu = 
 				new UniversityAdministrationMenu();
@@ -111,7 +117,9 @@ public class RemoveStaffCase extends JFrame {
 	}
 	});
     btnSubmitButton.setBounds(999, 529, 215, 71);
-    contentPane.add(btnSubmitButton)	
+    contentPane.add(btnSubmitButton);
+    //Creating and displaying the back button.
+    //The back button returns to the UniversityAdministrationMenu class.
     JButton btnBackButton = new JButton("Back");
     btnBackButton.setFont(new Font("Bookman Old Style", Font.BOLD, 35));
     btnBackButton.addActionListener(new ActionListener() {
@@ -124,6 +132,7 @@ public class RemoveStaffCase extends JFrame {
 	});
     btnBackButton.setBounds(47, 529, 215, 71);
     contentPane.add(btnBackButton);	
+    //Creating and displaying all the images in labels and buttons.
     JLabel lblImage10 = new JLabel("");
     Image img10 = new ImageIcon(this.getClass().getResource(
     	     "/Pics/135464593_1077636602678989_8400056473973577538_n.png")).
