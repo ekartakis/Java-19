@@ -38,9 +38,10 @@ public class StaffNegative extends JFrame {
     });
   }
 
- /**
+  /**
  * Create the frame.
  */
+  //In this case the staff member is not a positive case.
   public StaffNegative() {
     setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     setBounds(0, 0, 1280, 730);
@@ -49,37 +50,38 @@ public class StaffNegative extends JFrame {
     contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
     setContentPane(contentPane);
     contentPane.setLayout(null);
-
+    //Creating and displaying all the labels to write the text.
     JLabel lblNewLabel = new JLabel("You tested negative for Covid-19! "
           + "Stay safe!");
     lblNewLabel.setFont(new Font("Bookman Old Style", Font.BOLD, 27));
     lblNewLabel.setBounds(12, 29, 698, 70);
     contentPane.add(lblNewLabel);
 
-    JLabel lblNewLabel_1 = new JLabel("-You do not need to self-isolate if "
-    		+ "your test is negative, as long as:\r\n");
-    lblNewLabel_1.setFont(new Font("Bookman Old Style", Font.PLAIN, 27));
-    lblNewLabel_1.setBounds(12, 110, 877, 70);
-    contentPane.add(lblNewLabel_1);
+    JLabel lblNewLabel1 = new JLabel("-You do not need to self-isolate "
+        + "if your test is negative, as long as: ");
+    lblNewLabel1.setFont(new Font("Bookman Old Style", Font.PLAIN, 27));
+    lblNewLabel1.setBounds(12, 110, 877, 70);
+    contentPane.add(lblNewLabel1);
+
+    JLabel lblNewLabel2 = new JLabel("- Everyone you live with who has "
+        + "symptoms tests negative.");
+    lblNewLabel2.setFont(new Font("Bookman Old Style", Font.PLAIN, 27));
+    lblNewLabel2.setBounds(12, 191, 827, 70);
+    contentPane.add(lblNewLabel2);
 		
-    JLabel lblNewLabel_2 = new JLabel("- Everyone you live with who has "
-    		+ "symptoms tests negative.\r\n");
-    lblNewLabel_2.setFont(new Font("Bookman Old Style", Font.PLAIN, 27));
-    lblNewLabel_2.setBounds(12, 191, 827, 70);
-    contentPane.add(lblNewLabel_2);
+    JLabel lblNewLabel3 = new JLabel("- Everyone in your support bubble "
+    		+ "who has symptoms tests negative.");
+    lblNewLabel3.setFont(new Font("Bookman Old Style", Font.PLAIN, 27));
+    lblNewLabel3.setBounds(10, 272, 966, 70);
+    contentPane.add(lblNewLabel3);
 		
-    JLabel lblNewLabel_3 = new JLabel("- Everyone in your support bubble "
-    		+ "who has symptoms tests negative.\r\n\t\t\t\t\t");
-    lblNewLabel_3.setFont(new Font("Bookman Old Style", Font.PLAIN, 27));
-    lblNewLabel_3.setBounds(10, 272, 966, 70);
-    contentPane.add(lblNewLabel_3);
-		
-    JLabel lblNewLabel_4 = new JLabel("- You feel well if you feel "
+    JLabel lblNewLabel4 = new JLabel("- You feel well if you feel "
     		+ "unwell, stay at home until you are feeling better.");
-    lblNewLabel_4.setFont(new Font("Bookman Old Style", Font.PLAIN, 27));
-    lblNewLabel_4.setBounds(10, 353, 1011, 70);
-    contentPane.add(lblNewLabel_4);
-		
+    lblNewLabel4.setFont(new Font("Bookman Old Style", Font.PLAIN, 27));
+    lblNewLabel4.setBounds(10, 353, 1011, 70);
+    contentPane.add(lblNewLabel4);
+    //Create and display the back button.
+    // The back button returns to the GeneralStaffMenu class.
     JButton btnBackButton = new JButton("Back");
     btnBackButton.addActionListener(new ActionListener() {
       public void actionPerformed(ActionEvent e) {
@@ -91,7 +93,7 @@ public class StaffNegative extends JFrame {
     btnBackButton.setFont(new Font("Bookman Old Style", Font.BOLD, 35));
     btnBackButton.setBounds(47, 529, 215, 71);
     contentPane.add(btnBackButton);
-		
+    //Creating and displaying all the images in labels and buttons.
     JLabel lblImage10 = new JLabel("");
     Image img10 = new ImageIcon(this.getClass().getResource(
     		"/Pics/135464593_1077636602678989_8400056473973577538_n.png")).
