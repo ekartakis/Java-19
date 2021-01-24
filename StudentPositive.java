@@ -36,6 +36,7 @@ public class StudentPositive extends JFrame {
   /**
   * Create the frame.
   */
+  //In this case the student is a positive case.
   public StudentPositive() {
     setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     setBounds(0, 0, 1280, 730);
@@ -48,70 +49,71 @@ public class StudentPositive extends JFrame {
     Student o = new Student();
     int tempAM = Integer.parseInt(CollStudentLogin.AM);
     String datepos = o.giveTheDateOfPos(tempAM);
-
+    //Creating and displaying all the labels to write the text.
     JLabel lblNewLabel = new JLabel(
         "You tested positive for Covid-19! Follow the instructions below:");
     lblNewLabel.setFont(new Font("Bookman Old Style", Font.BOLD, 27));
     lblNewLabel.setBounds(12, 13, 953, 52);
     contentPane.add(lblNewLabel);
     
-    JLabel lblNewLabel_1 = new JLabel(
+    JLabel lblNewLabel1 = new JLabel(
         "- Self-isolate for 14 days from \r\n\t\t\t\t\t" + datepos);
-    lblNewLabel_1.setFont(new Font("Bookman Old Style", Font.PLAIN, 27));
-    lblNewLabel_1.setBounds(12, 92, 798, 32);
-    contentPane.add(lblNewLabel_1);
+    lblNewLabel1.setFont(new Font("Bookman Old Style", Font.PLAIN, 27));
+    lblNewLabel1.setBounds(12, 92, 798, 32);
+    contentPane.add(lblNewLabel1);
 
-    JLabel lblNewLabel_2 = new JLabel(
+    JLabel lblNewLabel2 = new JLabel(
         "- Do not leave your home for any reason \u2013 \t");
-    lblNewLabel_2.setFont(new Font("Bookman Old Style", Font.PLAIN, 27));
-    lblNewLabel_2.setBounds(12, 135, 613, 32);
-    contentPane.add(lblNewLabel_2);
+    lblNewLabel2.setFont(new Font("Bookman Old Style", Font.PLAIN, 27));
+    lblNewLabel2.setBounds(12, 135, 613, 32);
+    contentPane.add(lblNewLabel2);
 
-    JLabel lblNewLabel_3 = new JLabel("- Do not have visitors in your home,"
+    JLabel lblNewLabel3 = new JLabel("- Do not have visitors in your home,"
         + " including friends and family except for essential care.");
-    lblNewLabel_3.setFont(new Font("Bookman Old Style", Font.PLAIN, 27));
-    lblNewLabel_3.setBounds(12, 264, 1226, 32);
-    contentPane.add(lblNewLabel_3);
+    lblNewLabel3.setFont(new Font("Bookman Old Style", Font.PLAIN, 27));
+    lblNewLabel3.setBounds(12, 264, 1226, 32);
+    contentPane.add(lblNewLabel3);
 
-    JLabel lblNewLabel_4 = new JLabel(
+    JLabel lblNewLabel4 = new JLabel(
         "- Try to avoid contact with anyone"
         + " you live with as much as possible.\r\n");
-    lblNewLabel_4.setFont(new Font("Bookman Old Style", Font.PLAIN, 27));
-    lblNewLabel_4.setBounds(12, 307, 953, 32);
-    contentPane.add(lblNewLabel_4);
+    lblNewLabel4.setFont(new Font("Bookman Old Style", Font.PLAIN, 27));
+    lblNewLabel4.setBounds(12, 307, 953, 32);
+    contentPane.add(lblNewLabel4);
 
-    JLabel lblNewLabel_5 = new JLabel(
+    JLabel lblNewLabel5 = new JLabel(
         "- People you live with do not"
         + " need to self-isolate if you do not have symptoms.");
-    lblNewLabel_5.setFont(new Font("Bookman Old Style", Font.PLAIN, 27));
-    lblNewLabel_5.setBounds(12, 350, 1194, 32);
-    contentPane.add(lblNewLabel_5);
+    lblNewLabel5.setFont(new Font("Bookman Old Style", Font.PLAIN, 27));
+    lblNewLabel5.setBounds(12, 350, 1194, 32);
+    contentPane.add(lblNewLabel5);
 
-    JLabel lblNewLabel_6 = new JLabel(
+    JLabel lblNewLabel6 = new JLabel(
         "- People in your support bubble do"
         + " not need to self-isolate if you do not have symptoms.");
-    lblNewLabel_6.setFont(new Font("Bookman Old Style", Font.PLAIN, 27));
-    lblNewLabel_6.setBounds(12, 393, 1194, 32);
-    contentPane.add(lblNewLabel_6);
+    lblNewLabel6.setFont(new Font("Bookman Old Style", Font.PLAIN, 27));
+    lblNewLabel6.setBounds(12, 393, 1194, 32);
+    contentPane.add(lblNewLabel6);
 
-    JLabel lblNewLabel_7 = new JLabel(
+    JLabel lblNewLabel7 = new JLabel(
         "WARNING: If you live with someone at higher risk from coronavirus,");
-    lblNewLabel_7.setFont(new Font("Bookman Old Style", Font.PLAIN, 27));
-    lblNewLabel_7.setBounds(12, 436, 920, 32);
-    contentPane.add(lblNewLabel_7);
+    lblNewLabel7.setFont(new Font("Bookman Old Style", Font.PLAIN, 27));
+    lblNewLabel7.setBounds(12, 436, 920, 32);
+    contentPane.add(lblNewLabel7);
 
-    JLabel lblNewLabel_8 = new JLabel(
+    JLabel lblNewLabel8 = new JLabel(
         " try to arrange for them to stay with friends or family for 14 days.");
-    lblNewLabel_8.setFont(new Font("Bookman Old Style", Font.PLAIN, 27));
-    lblNewLabel_8.setBounds(12, 479, 920, 32);
-    contentPane.add(lblNewLabel_8);
+    lblNewLabel8.setFont(new Font("Bookman Old Style", Font.PLAIN, 27));
+    lblNewLabel8.setBounds(12, 479, 920, 32);
+    contentPane.add(lblNewLabel8);
 
     JLabel lblNewLabel9 = new JLabel(
         "   or ask friends and family to drop it off at your home.\"");
     lblNewLabel9.setFont(new Font("Bookman Old Style", Font.PLAIN, 27));
     lblNewLabel9.setBounds(12, 221, 775, 32);
     contentPane.add(lblNewLabel9);
-
+    //Creating and displaying the back button.
+    // The back button returns to the CollegeStudentMenu class.
     JButton btnBackButton = new JButton("Back");
     btnBackButton.addActionListener(new ActionListener() {
         public void actionPerformed(ActionEvent e) {
@@ -123,9 +125,7 @@ public class StudentPositive extends JFrame {
     btnBackButton.setFont(new Font("Bookman Old Style", Font.BOLD, 35));
     btnBackButton.setBounds(47, 529, 215, 71);
     contentPane.add(btnBackButton);
-    Image img11 = new ImageIcon(
-        this.getClass().getResource("/Pics/stay-home.png")).getImage();
-
+    //Creating and displaying all the images in labels and buttons.
     JLabel lblImage10 = new JLabel("");
     Image img10 = new ImageIcon(this.getClass().getResource(
         "/Pics/135464593_1077636602678989_8400056473973577538_n.png")
@@ -134,11 +134,11 @@ public class StudentPositive extends JFrame {
     lblImage10.setBounds(981, 0, 285, 233);
     contentPane.add(lblImage10);
 
-    JLabel lblNewLabel_10 = new JLabel(
+    JLabel lblNewLabel10 = new JLabel(
         "   if you need food or medicine, order it online or by phone,");
-    lblNewLabel_10.setFont(new Font("Bookman Old Style", Font.PLAIN, 27));
-    lblNewLabel_10.setBounds(12, 179, 826, 31);
-    contentPane.add(lblNewLabel_10);
+    lblNewLabel10.setFont(new Font("Bookman Old Style", Font.PLAIN, 27));
+    lblNewLabel10.setBounds(12, 179, 826, 31);
+    contentPane.add(lblNewLabel10);
     
     Image img4 = new ImageIcon(
         this.getClass().getResource("/Pics/left-arrow (1).png")).getImage();
