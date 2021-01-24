@@ -43,6 +43,8 @@ public class RemoveStaffCloseContacts extends JFrame {
   /**
 *  * Create the frame.
  */
+  /*The university administration removes a staff member
+   *  from being a close contact.*/
   public RemoveStaffCloseContacts() {
     setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     setBounds(0, 0, 1280, 730);
@@ -57,7 +59,7 @@ public class RemoveStaffCloseContacts extends JFrame {
     lblNewLabel.setFont(new Font("Bookman Old Style", Font.PLAIN, 27));
     lblNewLabel.setBounds(37, 28, 722, 86);
     contentPane.add(lblNewLabel);
-	
+    //This is where you insert the TIN of the staff member.
     textField = new JTextField();
     textField.setFont(new Font("Bookman Old Style", Font.PLAIN, 25));
     textField.setBackground(SystemColor.menu);
@@ -65,11 +67,11 @@ public class RemoveStaffCloseContacts extends JFrame {
     contentPane.add(textField);
     textField.setColumns(10);
 	
-    JLabel lblNewLabel_1 = new JLabel("TIN");
-    lblNewLabel_1.setFont(new Font("Bookman Old Style", Font.BOLD, 35));
-    lblNewLabel_1.setBounds(179, 247, 83, 84);
-    contentPane.add(lblNewLabel_1);
-	
+    JLabel lblNewLabel1 = new JLabel("TIN");
+    lblNewLabel1.setFont(new Font("Bookman Old Style", Font.BOLD, 35));
+    lblNewLabel1.setBounds(179, 247, 83, 84);
+    contentPane.add(lblNewLabel1);
+    //Creating and displaying the submit button.
     JButton btnSubmitButton = new JButton("Submit");
     btnSubmitButton.setFont(new Font("Bookman Old Style", Font.BOLD, 35));
     btnSubmitButton.addActionListener(new ActionListener() {
@@ -107,7 +109,8 @@ public class RemoveStaffCloseContacts extends JFrame {
 	});
     btnSubmitButton.setBounds(999, 529, 215, 71);
     contentPane.add(btnSubmitButton);
-		
+    //Creating and displaying the back button.
+    //The back button returns to the MainMenu class.
     JButton btnBackButton = new JButton("Back");
     btnBackButton.setFont(new Font("Bookman Old Style", Font.BOLD, 35));
     btnBackButton.addActionListener(new ActionListener() {
@@ -120,7 +123,7 @@ public class RemoveStaffCloseContacts extends JFrame {
 	});
     btnBackButton.setBounds(47, 529, 215, 71);
     contentPane.add(btnBackButton);
-		
+    //Creating and displaying all the images in labels and buttons.
     JLabel lblImage10 = new JLabel("");
     Image img10 = new ImageIcon(this.getClass().getResource(
     		"/Pics/135464593_1077636602678989_8400056473973577538_n.png")).
