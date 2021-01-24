@@ -35,7 +35,8 @@ public class AnotherStCloseCont extends JFrame {
   /**
   * Create the frame.
   */
-	
+  /*The university administration adds another student
+   *  as his/hers close contact.*/
   public AnotherStCloseCont() {
     setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     setBounds(0, 0, 1280, 730);
@@ -44,14 +45,15 @@ public class AnotherStCloseCont extends JFrame {
     contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
     setContentPane(contentPane);
     contentPane.setLayout(null);
-		
+
     JLabel lblAddAnotherStudentCloseContact = new JLabel(
         "Would you like to add another close contact?");
     lblAddAnotherStudentCloseContact.setFont(new Font(
         "Bookman Old Style", Font.PLAIN, 27));
     lblAddAnotherStudentCloseContact.setBounds(37, 28, 722, 86);
     contentPane.add(lblAddAnotherStudentCloseContact);
-
+    //Creating and displaying the Yes button.
+    //The Yes button goes to the new positive student case menu.
     JButton btnYesButton = new JButton("Yes");
     btnYesButton.setFont(new Font("Bookman Old Style", Font.BOLD, 35));
     btnYesButton.addActionListener(new ActionListener() {
@@ -63,7 +65,8 @@ public class AnotherStCloseCont extends JFrame {
     });
     btnYesButton.setBounds(47, 529, 215, 71);
     contentPane.add(btnYesButton);
-
+    //Creating and displaying the No button.
+    //The No button returns to the UniversityAdministrationMenu class.
     JButton btnNoButton = new JButton("No");
     btnNoButton.setFont(new Font("Bookman Old Style", Font.BOLD, 35));
     btnNoButton.addActionListener(new ActionListener() {
@@ -75,7 +78,7 @@ public class AnotherStCloseCont extends JFrame {
     });
     btnNoButton.setBounds(999, 529, 215, 71);
     contentPane.add(btnNoButton);
-
+    //Creating and displaying all the images in labels and buttons. 
     JLabel lblImage10 = new JLabel("");
     Image img10 = new ImageIcon(this.getClass().getResource("/Pics/135464593_"
         + "1077636602678989_8400056473973577538_n.png")).getImage();
@@ -85,21 +88,21 @@ public class AnotherStCloseCont extends JFrame {
 
     JLabel lblImage14 = new JLabel("");
     Image img14 = new ImageIcon(this.getClass().getResource(
-    		"/Pics/Healthcare-Virus-icon.png")).getImage();
+        "/Pics/Healthcare-Virus-icon.png")).getImage();
     lblImage14.setIcon(new ImageIcon(img14));
     lblImage14.setBounds(321, 156, 96, 96);
     contentPane.add(lblImage14);
 
     JLabel lblImage2 = new JLabel("");
     Image img2 = new ImageIcon(this.getClass().getResource(
-    		"/Pics/Healthcare-Virus-icon.png")).getImage();
+        "/Pics/Healthcare-Virus-icon.png")).getImage();
     lblImage2.setIcon(new ImageIcon(img2));
     lblImage2.setBounds(234, 317, 96, 96);
     contentPane.add(lblImage2);
 
     JLabel lblImage4 = new JLabel("");
     Image img4 = new ImageIcon(this.getClass().getResource(
-    		"/Pics/Healthcare-Virus-icon.png")).getImage();
+        "/Pics/Healthcare-Virus-icon.png")).getImage();
     lblImage4.setIcon(new ImageIcon(img4));
     lblImage4.setBounds(104, 215, 96, 96);
     contentPane.add(lblImage4);
