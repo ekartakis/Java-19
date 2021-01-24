@@ -44,6 +44,7 @@ public class AddNewStCase extends JFrame {
   /**
   * Create the frame.
   */
+  //The university administration adds a new student positive case.
   public AddNewStCase() {
     setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     setBounds(0, 0, 1280, 730);
@@ -52,7 +53,7 @@ public class AddNewStCase extends JFrame {
     contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
     setContentPane(contentPane);
     contentPane.setLayout(null);
-
+    //This is where you insert the academic id of the student.
     textField = new JTextField();
     textField.setFont(new Font("Bookman Old Style", Font.PLAIN, 25));
     textField.setBackground(SystemColor.menu);
@@ -69,10 +70,14 @@ public class AddNewStCase extends JFrame {
     lblID.setFont(new Font("Bookman Old Style", Font.BOLD, 35));
     lblID.setBounds(179, 247, 83, 84);
     contentPane.add(lblID);
-
+    //Creating and displaying the submit button.
     JButton btnSubmitButton = new JButton("Submit");
     btnSubmitButton.setFont(new Font("Bookman Old Style", Font.BOLD, 35));
     btnSubmitButton.addActionListener(new ActionListener() {
+      /*Checks if the academic id is correct and updates
+        the database in case it is.
+        If the id is incorrect, a message is displayed at the screen
+        to warn the user.*/
       public void actionPerformed(ActionEvent e) {
         int tempAm = 0;
           String result = " ";
@@ -101,7 +106,8 @@ public class AddNewStCase extends JFrame {
     });
     btnSubmitButton.setBounds(999, 529, 215, 71);
     contentPane.add(btnSubmitButton);
-
+    //Creating and displaying the back button.
+    //The back button returns to the UniversityAdministrationMenu class.
     JButton btnBackButton = new JButton("Back");
     btnBackButton.setFont(new Font("Bookman Old Style", Font.BOLD, 35));
     btnBackButton.addActionListener(new ActionListener() {
@@ -114,7 +120,7 @@ public class AddNewStCase extends JFrame {
     });
     btnBackButton.setBounds(47, 529, 215, 71);
     contentPane.add(btnBackButton);
-
+    //Creating and displaying all the images in labels and buttons. 
     Image img4 = new ImageIcon(this.getClass().getResource(
         "/Pics/left-arrow (1).png")).getImage();
     btnBackButton.setIcon(new ImageIcon(img4));
