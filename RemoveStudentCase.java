@@ -46,6 +46,7 @@ public class RemoveStudentCase extends JFrame {
   /**
 	 * Create the frame.
 	 */
+  //The university administration removes a student positive case.
   public RemoveStudentCase() {
     setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     setBounds(0, 0, 1280, 730);
@@ -61,20 +62,25 @@ public class RemoveStudentCase extends JFrame {
     lblNewLabel.setBounds(37, 28, 722, 86);
     contentPane.add(lblNewLabel);
 		
-    JLabel lblNewLabel_1 = new JLabel("ID");
-    lblNewLabel_1.setFont(new Font("Bookman Old Style", Font.BOLD, 35));
-    lblNewLabel_1.setBounds(179, 247, 83, 84);
-    contentPane.add(lblNewLabel_1);
-		
+    JLabel lblNewLabel1 = new JLabel("ID");
+    lblNewLabel1.setFont(new Font("Bookman Old Style", Font.BOLD, 35));
+    lblNewLabel1.setBounds(179, 247, 83, 84);
+    contentPane.add(lblNewLabel1);
+    //This is where you insert the academic id of the student.
     textField = new JTextField();
     textField.setFont(new Font("Bookman Old Style", Font.PLAIN, 25));
     textField.setBackground(SystemColor.menu);
     textField.setBounds(295, 247, 657, 84);
     contentPane.add(textField);
     textField.setColumns(10);
-		
+    //Creating and displaying the submit button.
     JButton btnSubmitButton = new JButton("Submit");
     btnSubmitButton.addActionListener(new ActionListener() {
+ /*Checking if the academic id is correct.
+   If it is correct updates the database.
+   A message is also displayed in the screen to warn the user.
+   If the academic id is incorrect, a message is displayed at the screen
+        to warn the user.*/
 	public void actionPerformed(ActionEvent arg0) {
 	int tempAm = 0;
 	String result = " ";
@@ -109,7 +115,8 @@ public class RemoveStudentCase extends JFrame {
     btnSubmitButton.setFont(new Font("Bookman Old Style", Font.BOLD, 35));
     btnSubmitButton.setBounds(999, 529, 215, 71);
     contentPane.add(btnSubmitButton);
-	
+    //Creating and displaying the back button.
+    //The back button returns to the UniversityAdministrationMenu class.
     JButton btnBackButton = new JButton("Back");
     btnBackButton.addActionListener(new ActionListener() {
     	public void actionPerformed(ActionEvent arg0) {
@@ -122,7 +129,7 @@ public class RemoveStudentCase extends JFrame {
     btnBackButton.setFont(new Font("Bookman Old Style", Font.BOLD, 35));
     btnBackButton.setBounds(47, 529, 215, 71);
     contentPane.add(btnBackButton);
-		
+    //Creating and displaying all the images in labels and buttons.
     JLabel lblImage10 = new JLabel("");
     Image img10 = new ImageIcon(this.getClass().getResource(
 		"/Pics/135464593_1077636602678989_8400056473973577538_n.png"
