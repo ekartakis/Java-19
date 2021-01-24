@@ -42,6 +42,9 @@ public class AddNewCloseContofStPosCase extends JFrame {
   /**
   * Create the frame.
   */
+  /*The university administration adds a new close contact
+   *  of a staff member positive case.
+   */
   public AddNewCloseContofStPosCase() {
     setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     setBounds(0, 0, 1280, 730);
@@ -50,24 +53,28 @@ public class AddNewCloseContofStPosCase extends JFrame {
     contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
     setContentPane(contentPane);
     contentPane.setLayout(null);
-
+    //This is where you insert the academic id of the close contact.
     textField = new JTextField();
     textField.setFont(new Font("Bookman Old Style", Font.PLAIN, 25));
     textField.setBackground(SystemColor.menu);
     textField.setBounds(295, 247, 657, 84);
     contentPane.add(textField);
     textField.setColumns(10);
-
+    
     JLabel lblInsertIDofclosecontact = new JLabel("Please insert "
         + "the academic id of the close contact:");
     lblInsertIDofclosecontact.setFont(new Font("Bookman "
         + "Old Style", Font.PLAIN, 27));
     lblInsertIDofclosecontact.setBounds(37, 28, 722, 86);
     contentPane.add(lblInsertIDofclosecontact);
-
+    //Creating and displaying the submit button.
     JButton btnSubmitButton = new JButton("Submit");
     btnSubmitButton.setFont(new Font("Bookman Old Style", Font.BOLD, 35));
     btnSubmitButton.addActionListener(new ActionListener() {
+      /*Checking if the academic id is correct and updates the database
+      in case it is.
+      If the id is incorrect, a message is displayed at the screen
+      to warn the user.*/
       public void actionPerformed(ActionEvent arg0) {
         int tempAm = 0;
         String result = " ";
@@ -104,7 +111,8 @@ public class AddNewCloseContofStPosCase extends JFrame {
 
     btnSubmitButton.setBounds(999, 529, 215, 71);
     contentPane.add(btnSubmitButton);
-		
+    //Creating and displaying the back button.
+    //The back button returns to the NewPosStCaseMenu class.
     JButton btnBackButton = new JButton("Back");
     btnBackButton.setFont(new Font("Bookman Old Style", Font.BOLD, 35));
     btnBackButton.addActionListener(new ActionListener() {
@@ -116,31 +124,31 @@ public class AddNewCloseContofStPosCase extends JFrame {
     });
     btnBackButton.setBounds(47, 529, 215, 71);
     contentPane.add(btnBackButton);
-		
+
     JLabel lblID = new JLabel("ID");
     lblID.setFont(new Font("Bookman Old Style", Font.BOLD, 35));
     lblID.setBounds(167, 247, 95, 84);
     contentPane.add(lblID);
-		
+    //Creating and displaying all the images in labels and buttons. 
     JLabel lblImage10 = new JLabel("");
     Image img10 = new ImageIcon(this.getClass().getResource("/Pics/135464593_"
         + "1077636602678989_8400056473973577538_n.png")).getImage();
     lblImage10.setIcon(new ImageIcon(img10));
     lblImage10.setBounds(981, 0, 285, 233);
     contentPane.add(lblImage10);
-		
+
     Image img4 = new ImageIcon(this.getClass().getResource(
         "/Pics/left-arrow (1).png")).getImage();
     btnBackButton.setIcon(new ImageIcon(img4));
     btnBackButton.setFont(new Font("Tahoma", Font.BOLD, 24));
     contentPane.add(btnBackButton);
-		
+
     Image img3 = new ImageIcon(this.getClass().getResource(
         "/Pics/ok.png")).getImage();
     btnSubmitButton.setIcon(new ImageIcon(img3));
     btnSubmitButton.setFont(new Font("Tahoma", Font.BOLD, 24));
     contentPane.add(btnSubmitButton);
-		
+
     JLabel lblImage12 = new JLabel("");
     Image img12 = new ImageIcon(this.getClass().getResource(
         "/Pics/lock.png")).getImage();
