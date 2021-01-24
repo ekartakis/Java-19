@@ -42,6 +42,10 @@ public class AddNewCloseContofStaffMemberPosCase extends JFrame {
   /**
   * Create the frame.
   */
+  
+  /*The university administration adds a new close contact 
+   * of a staff member positive case.
+   */
   public AddNewCloseContofStaffMemberPosCase() {
     setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     setBounds(0, 0, 1280, 730);
@@ -50,24 +54,27 @@ public class AddNewCloseContofStaffMemberPosCase extends JFrame {
     contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
     setContentPane(contentPane);
     contentPane.setLayout(null);
+    //This is where you insert the TIN number of the close contact.
     textField = new JTextField();
     textField.setFont(new Font("Bookman Old Style", Font.PLAIN, 25));
     textField.setBackground(SystemColor.menu);
     textField.setBounds(295, 247, 657, 84);
     contentPane.add(textField);
     textField.setColumns(10);
-
+    
     JLabel lblInsertTinofclosecontact = 
         new JLabel("Please insert the TIN of the close contact:");
     lblInsertTinofclosecontact.setFont(
         new Font("Bookman Old Style", Font.PLAIN, 27));
     lblInsertTinofclosecontact.setBounds(37, 28, 722, 86);
     contentPane.add(lblInsertTinofclosecontact);
-
+    //Creating and displaying the submit button.
     JButton btnSubmitButton = new JButton("Submit");
     btnSubmitButton.setFont(new Font("Bookman Old Style", Font.BOLD, 35));
     btnSubmitButton.addActionListener(new ActionListener() {
-      
+      /*Checking if the TIN is correct and updates the database in case it is.
+        If the TIN is incorrect, a message is displayed at the screen
+        to warn the user.*/
       public void actionPerformed(ActionEvent arg0) {
         int tempAfm = 0;
         String result = " ";
@@ -104,7 +111,8 @@ public class AddNewCloseContofStaffMemberPosCase extends JFrame {
     });
     btnSubmitButton.setBounds(999, 529, 215, 71);
     contentPane.add(btnSubmitButton);
-
+    //Creating and displaying the back button.
+    //The back button returns to the NewPosStaffCaseMenu class.
     JButton btnBackButton;
     btnBackButton = new JButton("Back");
     btnBackButton.addActionListener(new ActionListener() {
@@ -122,7 +130,7 @@ public class AddNewCloseContofStaffMemberPosCase extends JFrame {
     lblTIN.setFont(new Font("Tahoma", Font.BOLD, 35));
     lblTIN.setBounds(160, 247, 102, 84);
     contentPane.add(lblTIN);
-
+    //Creating and displaying all the images in labels and buttons. 
     JLabel lblImage10 = new JLabel("");
     Image img10 = new ImageIcon(this.getClass().getResource("/Pics/135464593_"
         + "1077636602678989_8400056473973577538_n.png")).getImage();
