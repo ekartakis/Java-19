@@ -44,6 +44,7 @@ public class CollStudentLogin extends JFrame {
   /**
   * Create the frame.
   */
+  //The student logs in his/her profile.
   public CollStudentLogin() {
     setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     setBounds(0, 0, 1280, 730);
@@ -51,9 +52,8 @@ public class CollStudentLogin extends JFrame {
     contentPane.setBackground(Color.WHITE);
     contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
     setContentPane(contentPane);
-
     contentPane.setLayout(null);
-
+    //This is where he/she writes his/her academic id.
     textField = new JTextField();
     textField.setFont(new Font("Bookman Old Style", Font.PLAIN, 25));
     textField.setBackground(new Color(240, 240, 240));
@@ -67,9 +67,14 @@ public class CollStudentLogin extends JFrame {
             new Font("Bookman Old Style", Font.BOLD, 35));
     lblCollStudentUserName.setBounds(594, 257, 60, 86);
     contentPane.add(lblCollStudentUserName);
-
+    //Creating and displaying the login button.
     JButton btnCollStudentLoginButton = new JButton("Login");
     btnCollStudentLoginButton.addActionListener(new ActionListener() {
+      /*Checking if the id is correct and updates the database in case it is.
+       If it is correct, a message is displayed in the screen to warn the user.
+       Then the Login button calls the CollStudentMenu class. 
+       If the id is incorrect, a message is displayed in the screen
+       to warn the user.*/
       public void actionPerformed(ActionEvent e) {
           int tempAm = 0;
           String result = " ";
@@ -108,7 +113,8 @@ public class CollStudentLogin extends JFrame {
     lblLoginCollStudent.setFont(new Font("Bookman Old Style", Font.PLAIN, 30));
     lblLoginCollStudent.setBounds(432, 66, 626, 86);
     contentPane.add(lblLoginCollStudent);
-
+    //Creating and displaying the back button.
+    //The back button returns to the MainMenu class.
     JButton btnBackButton = new JButton("Back");
     btnBackButton.setFont(new Font("Bookman Old Style", Font.BOLD, 35));
     btnBackButton.addActionListener(new ActionListener() {
@@ -120,7 +126,7 @@ public class CollStudentLogin extends JFrame {
     });
     btnBackButton.setBounds(425, 529, 215, 71);
     contentPane.add(btnBackButton);
-
+    //Creating and displaying all the images in labels and buttons.
     Image img3 = new ImageIcon(
         this.getClass().getResource("/Pics/ok.png")).getImage();
     btnCollStudentLoginButton.setIcon(new ImageIcon(img3));
@@ -140,9 +146,6 @@ public class CollStudentLogin extends JFrame {
     btnBackButton.setIcon(new ImageIcon(img4));
     btnBackButton.setFont(new Font("Tahoma", Font.BOLD, 24));
     contentPane.add(btnBackButton);
-    Image img10 = new ImageIcon(this.getClass().getResource(
-        "/Pics/135464593_1077636602678989_8400056473973577538_n.png")
-            ).getImage();
 
     JLabel lblImage14 = new JLabel("");
     Image img14 = new ImageIcon(

@@ -38,6 +38,8 @@ public class StudentCloseCon extends JFrame {
   /**
   * Create the frame.
   */
+  //In this case the student is a close contact.
+  //The student is asked about having heavy symptoms.
   public StudentCloseCon() {
     setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     setBounds(0, 0, 1280, 730);
@@ -46,7 +48,7 @@ public class StudentCloseCon extends JFrame {
     contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
     setContentPane(contentPane);
     contentPane.setLayout(null);
-
+    //Creating and displaying all the labels to write the text.
     JLabel lblNewLabel = new JLabel("You are a close contact!");
     lblNewLabel.setFont(new Font("Bookman Old Style", Font.BOLD, 27));
     lblNewLabel.setBounds(12, 13, 663, 43);
@@ -55,37 +57,38 @@ public class StudentCloseCon extends JFrame {
     Student i = new Student();
     int tempAM = Integer.parseInt(CollStudentLogin.AM);
     dateclosecont = i.giveTheDateOfCloseCont(tempAM);
-    JLabel lblNewLabel_1 = 
-        new JLabel("Have you had any of the following symptoms?");
-    lblNewLabel_1.setFont(new Font("Bookman Old Style", Font.PLAIN, 27));
-    lblNewLabel_1.setBounds(12, 78, 696, 43);
-    contentPane.add(lblNewLabel_1);
+    JLabel lblNewLabel1 = new JLabel("Have you had"
+        + " any of the following symptoms?");
+    lblNewLabel1.setFont(new Font("Bookman Old Style", Font.PLAIN, 27));
+    lblNewLabel1.setBounds(12, 78, 696, 43);
+    contentPane.add(lblNewLabel1);
 
-    JLabel lblNewLabel_2 = new JLabel("- Fever");
-    lblNewLabel_2.setFont(new Font("Bookman Old Style", Font.PLAIN, 27));
-    lblNewLabel_2.setBounds(12, 132, 170, 43);
-    contentPane.add(lblNewLabel_2);
+    JLabel lblNewLabel2 = new JLabel("- Fever");
+    lblNewLabel2.setFont(new Font("Bookman Old Style", Font.PLAIN, 27));
+    lblNewLabel2.setBounds(12, 132, 170, 43);
+    contentPane.add(lblNewLabel2);
 
-    JLabel lblNewLabel_3 = new JLabel("- Cough");
-    lblNewLabel_3.setFont(new Font("Bookman Old Style", Font.PLAIN, 27));
-    lblNewLabel_3.setBounds(12, 186, 170, 43);
-    contentPane.add(lblNewLabel_3);
+    JLabel lblNewLabel3 = new JLabel("- Cough");
+    lblNewLabel3.setFont(new Font("Bookman Old Style", Font.PLAIN, 27));
+    lblNewLabel3.setBounds(12, 186, 170, 43);
+    contentPane.add(lblNewLabel3);
 
-    JLabel lblNewLabel_4 = new JLabel("- Shortness of breath");
-    lblNewLabel_4.setFont(new Font("Bookman Old Style", Font.PLAIN, 27));
-    lblNewLabel_4.setBounds(12, 240, 336, 43);
-    contentPane.add(lblNewLabel_4);
+    JLabel lblNewLabel4 = new JLabel("- Shortness of breath");
+    lblNewLabel4.setFont(new Font("Bookman Old Style", Font.PLAIN, 27));
+    lblNewLabel4.setBounds(12, 240, 336, 43);
+    contentPane.add(lblNewLabel4);
 
-    JLabel lblNewLabel_5 = new JLabel("- Sudden onset of anemia");
-    lblNewLabel_5.setFont(new Font("Bookman Old Style", Font.PLAIN, 27));
-    lblNewLabel_5.setBounds(12, 294, 377, 43);
-    contentPane.add(lblNewLabel_5);
+    JLabel lblNewLabel5 = new JLabel("- Sudden onset of anemia");
+    lblNewLabel5.setFont(new Font("Bookman Old Style", Font.PLAIN, 27));
+    lblNewLabel5.setBounds(12, 294, 377, 43);
+    contentPane.add(lblNewLabel5);
 
-    JLabel lblNewLabel_6 = new JLabel("- Tastelessness");
-    lblNewLabel_6.setFont(new Font("Bookman Old Style", Font.PLAIN, 27));
-    lblNewLabel_6.setBounds(12, 354, 285, 43);
-    contentPane.add(lblNewLabel_6);
-
+    JLabel lblNewLabel6 = new JLabel("- Tastelessness");
+    lblNewLabel6.setFont(new Font("Bookman Old Style", Font.PLAIN, 27));
+    lblNewLabel6.setBounds(12, 354, 285, 43);
+    contentPane.add(lblNewLabel6);
+    //Creating and displaying the Yes button.
+    //The Yes button calls the StudentHeavySymptoms class.
     JButton btnNewButton = new JButton("Yes");
     btnNewButton.setFont(new Font("Bookman Old Style", Font.BOLD, 35));
     btnNewButton.addActionListener(new ActionListener() {
@@ -97,19 +100,21 @@ public class StudentCloseCon extends JFrame {
     });
     btnNewButton.setBounds(470, 275, 139, 55);
     contentPane.add(btnNewButton);
-
-    JButton btnNewButton_1 = new JButton("No");
-    btnNewButton_1.setFont(new Font("Bookman Old Style", Font.BOLD, 35));
-    btnNewButton_1.addActionListener(new ActionListener() {
+    //Creating and displaying the No button.
+    //The No button calls the StudentLightSymptoms class.
+    JButton btnNewButton1 = new JButton("No");
+    btnNewButton1.setFont(new Font("Bookman Old Style", Font.BOLD, 35));
+    btnNewButton1.addActionListener(new ActionListener() {
         public void actionPerformed(ActionEvent e) {
           setVisible(false);
           StudentLightSymptoms ls = new StudentLightSymptoms();
           ls.setVisible(true);
         }
     });
-    btnNewButton_1.setBounds(470, 350, 139, 55);
-    contentPane.add(btnNewButton_1);
-
+    btnNewButton1.setBounds(470, 350, 139, 55);
+    contentPane.add(btnNewButton1);
+    //Creating and displaying the back button.
+    // The back button returns to the CollegeStudentMenu class.
     JButton btnBackButton = new JButton("Back");
     btnBackButton.addActionListener(new ActionListener() {
         public void actionPerformed(ActionEvent e) {
@@ -121,7 +126,7 @@ public class StudentCloseCon extends JFrame {
     btnBackButton.setFont(new Font("Bookman Old Style", Font.BOLD, 35));
     btnBackButton.setBounds(47, 529, 215, 71);
     contentPane.add(btnBackButton);
-
+    //Creating and displaying all the images in labels and buttons.
     JLabel lblImage10 = new JLabel("");
     Image img10 = new ImageIcon(this.getClass().getResource(
         "/Pics/135464593_1077636602678989_8400056473973577538_n.png")

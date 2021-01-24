@@ -43,6 +43,7 @@ public class UniversityAdministrationLogin extends JFrame {
   /**
   * Create the frame.
   */
+  //The university administration logs in.
   public UniversityAdministrationLogin() {
     setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     setBounds(0, 0, 1280, 730);
@@ -52,7 +53,7 @@ public class UniversityAdministrationLogin extends JFrame {
     contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
     setContentPane(contentPane);
     contentPane.setLayout(null);
-
+    //Creating and displaying all the labels to write the text.
     JLabel lblUniversityAdministrationLogin = 
         new JLabel("Enter your password:");
     lblUniversityAdministrationLogin.setFont(
@@ -64,16 +65,21 @@ public class UniversityAdministrationLogin extends JFrame {
     lblPassword.setFont(new Font("Bookman Old Style", Font.BOLD, 30));
     lblPassword.setBounds(491, 257, 163, 86);
     contentPane.add(lblPassword);
-
+    //This is where the university administration inserts the password.
     textField = new JTextField();
     textField.setFont(new Font("Bookman Old Style", Font.PLAIN, 25));
     textField.setBackground(SystemColor.menu);
     textField.setBounds(664, 257, 554, 86);
     contentPane.add(textField);
     textField.setColumns(10);
-
+    //Creating and displaying the Login button.
     JButton btnUniversityAdministrationLogin = new JButton("Login");
     btnUniversityAdministrationLogin.addActionListener(new ActionListener() {
+      /*Checking if the password is correct.
+       If it is correct, a message is displayed in the screen to warn the user.
+       Then the Login button calls the UniversityAdministrationMenu class. 
+       If the id is incorrect, a message is displayed in the screen
+        to warn the user.*/
       public void actionPerformed(ActionEvent e) {
         String code = textField.getText();
         if (code.equals("123")) {
@@ -93,7 +99,8 @@ public class UniversityAdministrationLogin extends JFrame {
         new Font("Bookman Old Style", Font.BOLD, 35));
     btnUniversityAdministrationLogin.setBounds(1041, 529, 215, 71);
     contentPane.add(btnUniversityAdministrationLogin);
-
+    //Creating and displaying the back button.
+    // The back button returns to the MainMenu.
     JButton btnBackButton = new JButton("Back");
     btnBackButton.addActionListener(new ActionListener() {
       public void actionPerformed(ActionEvent arg0) {
@@ -105,7 +112,7 @@ public class UniversityAdministrationLogin extends JFrame {
     btnBackButton.setFont(new Font("Bookman Old Style", Font.BOLD, 35));
     btnBackButton.setBounds(425, 529, 215, 71);
     contentPane.add(btnBackButton);
-
+    //Creating and displaying all the images in labels and buttons.
     Image img3 = new ImageIcon(
         this.getClass().getResource("/Pics/ok.png")).getImage();
     btnUniversityAdministrationLogin.setIcon(new ImageIcon(img3));
